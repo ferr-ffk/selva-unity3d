@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class ComponenteMovimento : MonoBehaviour
+public class MovementComponent : MonoBehaviour
 {
 
     [SerializeField, Tooltip("A velocidade desejada do objeto. Deve ser definida.")]
