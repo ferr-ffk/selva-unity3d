@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 93
+  controlID: 32
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 19
+  controlID: 27
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -202,7 +202,7 @@ MonoBehaviour:
   - {fileID: 17}
   - {fileID: 21}
   m_Selected: 2
-  m_LastSelected: 2
+  m_LastSelected: 0
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -344,7 +344,7 @@ MonoBehaviour:
     m_SaveData: []
     m_ContainerData: []
     m_OverlaysVisible: 1
-  progressMessageClearTime: 363.7691052
+  progressMessageClearTime: -1
   notificationClearTime: -1
   timeSinceLastRotation: -1
   currentBranchAndRemoteHasUpdate: 0
@@ -546,9 +546,24 @@ MonoBehaviour:
       assets:
         keys:
         - 00000000000000001000000000000000
+        - e42f4cb3c2bff69409b991eaad00a763
+        - e13d15a8c1c5b1a4d816d7bb60b0fe07
+        - 198a528580093a5449b19e88c223fd79
+        - 6f2f68235e1477e4b96d759ec573d976
+        - f795d6ea09d88c34fa2ce609c1bd784f
+        - 99cdf2e5ee4d827438efe64240edac5c
         - 328e91b56ad0fe24b8d1b6782a81fd63
         - 90a5c56f2c23ca94482eb2f146753c7c
         - a08019ae3ff54d14e90cda52534b70c5
+        - 965a53e394b16bc4db29c753754d4a75
+        - 58ce51be860a79141907a56a387f1464
+        - 9c53962885c2c4f449125a979d6ad240
+        - 99c9720ab356a0642a771bea13969a05
+        - 75b2fd9cd04c94e7693616260cd451f2
+        - b364118da32569b4e86ee7ee4c5c8964
+        - f6cef624d047a1042916ebcb74f273b1
+        - 0000000000000000b000000000000000
+        - 00000000000000003000000000000000
         values:
         - path: Assets
           label: Assets
@@ -568,6 +583,119 @@ MonoBehaviour:
             originalPath: 
             indexStatus: 0
             workTreeStatus: 0
+        - path: Assets\Adaptive Performance
+          label: Adaptive Performance
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Adaptive Performance\AdaptivePerformanceGeneralSettings.asset
+          label: AdaptivePerformanceGeneralSettings.asset
+          level: 2
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Adaptive Performance\AdaptivePerformanceGeneralSettings.asset
+            fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
+              Performance\AdaptivePerformanceGeneralSettings.asset
+            projectPath: Assets\Adaptive Performance\AdaptivePerformanceGeneralSettings.asset
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\Adaptive Performance\Provider
+          label: Provider
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Adaptive Performance\Provider\Samsung Android Provider Loader.asset
+          label: Samsung Android Provider Loader.asset
+          level: 3
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Adaptive Performance\Provider\Samsung Android Provider Loader.asset
+            fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
+              Performance\Provider\Samsung Android Provider Loader.asset
+            projectPath: Assets\Adaptive Performance\Provider\Samsung Android Provider
+              Loader.asset
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\Adaptive Performance\Settings
+          label: Settings
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Adaptive Performance\Settings\Samsung Android Provider Settings.asset
+          label: Samsung Android Provider Settings.asset
+          level: 3
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Adaptive Performance\Settings\Samsung Android Provider Settings.asset
+            fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
+              Performance\Settings\Samsung Android Provider Settings.asset
+            projectPath: Assets\Adaptive Performance\Settings\Samsung Android Provider
+              Settings.asset
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
         - path: Assets\Prefabs
           label: Prefabs
           level: 1
@@ -622,17 +750,242 @@ MonoBehaviour:
             originalPath: 
             indexStatus: 1
             workTreeStatus: 1
+        - path: Assets\Prefabs\Player\leopard.prefab
+          label: leopard.prefab
+          level: 3
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Prefabs\Player\leopard.prefab
+            fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\leopard.prefab
+            projectPath: Assets\Prefabs\Player\leopard.prefab
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\Prefabs\Player\Player.cs
+          label: Player.cs
+          level: 3
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Prefabs\Player\Player.cs
+            fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\Player.cs
+            projectPath: Assets\Prefabs\Player\Player.cs
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\Scenes
+          label: Scenes
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scenes\SampleScene.unity
+          label: SampleScene.unity
+          level: 2
+          isFolder: 0
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Scenes\SampleScene.unity
+            fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Scenes\SampleScene.unity
+            projectPath: Assets\Scenes\SampleScene.unity
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 3
+        - path: Assets\Settings
+          label: Settings
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Settings\Build Profiles
+          label: Build Profiles
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Settings\Build Profiles\Padrao.asset
+          label: Padrao.asset
+          level: 3
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Settings\Build Profiles\Padrao.asset
+            fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Settings\Build
+              Profiles\Padrao.asset
+            projectPath: Assets\Settings\Build Profiles\Padrao.asset
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: ProjectSettings\EditorBuildSettings.asset
+          label: EditorBuildSettings.asset
+          level: 1
+          isFolder: 0
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: ProjectSettings\EditorBuildSettings.asset
+            fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\ProjectSettings\EditorBuildSettings.asset
+            projectPath: ProjectSettings\EditorBuildSettings.asset
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 3
+        - path: ProjectSettings\TagManager.asset
+          label: TagManager.asset
+          level: 1
+          isFolder: 0
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: ProjectSettings\TagManager.asset
+            fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\ProjectSettings\TagManager.asset
+            projectPath: ProjectSettings\TagManager.asset
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 3
       folders:
         keys:
         - Assets
+        - Assets\Adaptive Performance
+        - Assets\Adaptive Performance\Provider
+        - Assets\Adaptive Performance\Settings
         - Assets\Prefabs
         - Assets\Prefabs\Player
+        - Assets\Scenes
+        - Assets\Settings
+        - Assets\Settings\Build Profiles
+        - Packages
+        - ProjectSettings
         - UserSettings
         - UserSettings\Layouts
         values:
         - path: Assets
           label: Assets
           level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Adaptive Performance
+          label: Adaptive Performance
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Adaptive Performance\Provider
+          label: Provider
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Adaptive Performance\Settings
+          label: Settings
+          level: 2
           isFolder: 1
           isContainer: 0
           isCollapsed: 0
@@ -669,6 +1022,96 @@ MonoBehaviour:
         - path: Assets\Prefabs\Player
           label: Player
           level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Scenes
+          label: Scenes
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Settings
+          label: Settings
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Settings\Build Profiles
+          label: Build Profiles
+          level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Packages
+          label: Packages
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: ProjectSettings
+          label: ProjectSettings
+          level: 0
           isFolder: 1
           isContainer: 0
           isCollapsed: 0
@@ -766,6 +1209,215 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
+      - path: Assets\Adaptive Performance
+        label: Adaptive Performance
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Adaptive Performance\AdaptivePerformanceGeneralSettings.asset
+        label: AdaptivePerformanceGeneralSettings.asset
+        level: 2
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Adaptive Performance\AdaptivePerformanceGeneralSettings.asset
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
+            Performance\AdaptivePerformanceGeneralSettings.asset
+          projectPath: Assets\Adaptive Performance\AdaptivePerformanceGeneralSettings.asset
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Adaptive Performance\AdaptivePerformanceGeneralSettings.asset.meta
+        label: AdaptivePerformanceGeneralSettings.asset.meta
+        level: 3
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Adaptive Performance\AdaptivePerformanceGeneralSettings.asset.meta
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
+            Performance\AdaptivePerformanceGeneralSettings.asset.meta
+          projectPath: Assets\Adaptive Performance\AdaptivePerformanceGeneralSettings.asset.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Adaptive Performance\Provider.meta
+        label: Provider.meta
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Adaptive Performance\Provider.meta
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
+            Performance\Provider.meta
+          projectPath: Assets\Adaptive Performance\Provider.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Adaptive Performance\Provider
+        label: Provider
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Adaptive Performance\Provider\Samsung Android Provider Loader.asset
+        label: Samsung Android Provider Loader.asset
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Adaptive Performance\Provider\Samsung Android Provider Loader.asset
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
+            Performance\Provider\Samsung Android Provider Loader.asset
+          projectPath: Assets\Adaptive Performance\Provider\Samsung Android Provider
+            Loader.asset
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Adaptive Performance\Provider\Samsung Android Provider Loader.asset.meta
+        label: Samsung Android Provider Loader.asset.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Adaptive Performance\Provider\Samsung Android Provider Loader.asset.meta
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
+            Performance\Provider\Samsung Android Provider Loader.asset.meta
+          projectPath: Assets\Adaptive Performance\Provider\Samsung Android Provider
+            Loader.asset.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Adaptive Performance\Settings
+        label: Settings
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Adaptive Performance\Settings\Samsung Android Provider Settings.asset
+        label: Samsung Android Provider Settings.asset
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Adaptive Performance\Settings\Samsung Android Provider Settings.asset
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
+            Performance\Settings\Samsung Android Provider Settings.asset
+          projectPath: Assets\Adaptive Performance\Settings\Samsung Android Provider
+            Settings.asset
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Adaptive Performance\Settings\Samsung Android Provider Settings.asset.meta
+        label: Samsung Android Provider Settings.asset.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Adaptive Performance\Settings\Samsung Android Provider Settings.asset.meta
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
+            Performance\Settings\Samsung Android Provider Settings.asset.meta
+          projectPath: Assets\Adaptive Performance\Settings\Samsung Android Provider
+            Settings.asset.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Component.meta
+        label: Component.meta
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Component.meta
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Component.meta
+          projectPath: Assets\Component.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
       - path: Assets\Prefabs.meta
         label: Prefabs.meta
         level: 1
@@ -874,6 +1526,315 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 1
           workTreeStatus: 1
+      - path: Assets\Prefabs\Player\leopard.prefab
+        label: leopard.prefab
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Prefabs\Player\leopard.prefab
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\leopard.prefab
+          projectPath: Assets\Prefabs\Player\leopard.prefab
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Prefabs\Player\leopard.prefab.meta
+        label: leopard.prefab.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Prefabs\Player\leopard.prefab.meta
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\leopard.prefab.meta
+          projectPath: Assets\Prefabs\Player\leopard.prefab.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Prefabs\Player\Player.cs
+        label: Player.cs
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Prefabs\Player\Player.cs
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\Player.cs
+          projectPath: Assets\Prefabs\Player\Player.cs
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Prefabs\Player\Player.cs.meta
+        label: Player.cs.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Prefabs\Player\Player.cs.meta
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\Player.cs.meta
+          projectPath: Assets\Prefabs\Player\Player.cs.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Scenes
+        label: Scenes
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Scenes\SampleScene.unity
+        label: SampleScene.unity
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Scenes\SampleScene.unity
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Scenes\SampleScene.unity
+          projectPath: Assets\Scenes\SampleScene.unity
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Assets\Settings
+        label: Settings
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Settings\Build Profiles.meta
+        label: Build Profiles.meta
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Settings\Build Profiles.meta
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Settings\Build
+            Profiles.meta
+          projectPath: Assets\Settings\Build Profiles.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Settings\Build Profiles
+        label: Build Profiles
+        level: 2
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Settings\Build Profiles\Padrao.asset
+        label: Padrao.asset
+        level: 3
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Settings\Build Profiles\Padrao.asset
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Settings\Build
+            Profiles\Padrao.asset
+          projectPath: Assets\Settings\Build Profiles\Padrao.asset
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Assets\Settings\Build Profiles\Padrao.asset.meta
+        label: Padrao.asset.meta
+        level: 4
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Settings\Build Profiles\Padrao.asset.meta
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Settings\Build
+            Profiles\Padrao.asset.meta
+          projectPath: Assets\Settings\Build Profiles\Padrao.asset.meta
+          originalPath: 
+          indexStatus: 1
+          workTreeStatus: 1
+      - path: Packages
+        label: Packages
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Packages\manifest.json
+        label: manifest.json
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Packages\manifest.json
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Packages\manifest.json
+          projectPath: Packages\manifest.json
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: Packages\packages-lock.json
+        label: packages-lock.json
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Packages\packages-lock.json
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Packages\packages-lock.json
+          projectPath: Packages\packages-lock.json
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: ProjectSettings
+        label: ProjectSettings
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: ProjectSettings\EditorBuildSettings.asset
+        label: EditorBuildSettings.asset
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: ProjectSettings\EditorBuildSettings.asset
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\ProjectSettings\EditorBuildSettings.asset
+          projectPath: ProjectSettings\EditorBuildSettings.asset
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
+      - path: ProjectSettings\TagManager.asset
+        label: TagManager.asset
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: ProjectSettings\TagManager.asset
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\ProjectSettings\TagManager.asset
+          projectPath: ProjectSettings\TagManager.asset
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 3
       - path: UserSettings
         label: UserSettings
         level: 0
@@ -928,12 +1889,11 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 3
-      selectedNode:
-        path: Assets\Prefabs\Player\leopard.fbx
-        label: leopard.fbx
-        level: 3
+      - path: UserSettings\Search.settings
+        label: Search.settings
+        level: 1
         isFolder: 0
-        isContainer: 1
+        isContainer: 0
         isCollapsed: 0
         isHidden: 0
         isActive: 0
@@ -941,13 +1901,91 @@ MonoBehaviour:
         checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: Assets\Prefabs\Player\leopard.fbx
-          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\leopard.fbx
-          projectPath: Assets\Prefabs\Player\leopard.fbx
+          path: UserSettings\Search.settings
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\UserSettings\Search.settings
+          projectPath: UserSettings\Search.settings
           originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
+          indexStatus: 0
+          workTreeStatus: 3
+      selectedNode:
+        path: 
+        label: 
+        level: 0
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
     gitStatusEntries:
+    - path: Assets\Adaptive Performance\AdaptivePerformanceGeneralSettings.asset
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
+        Performance\AdaptivePerformanceGeneralSettings.asset
+      projectPath: Assets\Adaptive Performance\AdaptivePerformanceGeneralSettings.asset
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Adaptive Performance\AdaptivePerformanceGeneralSettings.asset.meta
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
+        Performance\AdaptivePerformanceGeneralSettings.asset.meta
+      projectPath: Assets\Adaptive Performance\AdaptivePerformanceGeneralSettings.asset.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Adaptive Performance\Provider.meta
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
+        Performance\Provider.meta
+      projectPath: Assets\Adaptive Performance\Provider.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Adaptive Performance\Provider\Samsung Android Provider Loader.asset
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
+        Performance\Provider\Samsung Android Provider Loader.asset
+      projectPath: Assets\Adaptive Performance\Provider\Samsung Android Provider
+        Loader.asset
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Adaptive Performance\Provider\Samsung Android Provider Loader.asset.meta
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
+        Performance\Provider\Samsung Android Provider Loader.asset.meta
+      projectPath: Assets\Adaptive Performance\Provider\Samsung Android Provider
+        Loader.asset.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Adaptive Performance\Settings\Samsung Android Provider Settings.asset
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
+        Performance\Settings\Samsung Android Provider Settings.asset
+      projectPath: Assets\Adaptive Performance\Settings\Samsung Android Provider
+        Settings.asset
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Adaptive Performance\Settings\Samsung Android Provider Settings.asset.meta
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
+        Performance\Settings\Samsung Android Provider Settings.asset.meta
+      projectPath: Assets\Adaptive Performance\Settings\Samsung Android Provider
+        Settings.asset.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Component.meta
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Component.meta
+      projectPath: Assets\Component.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
     - path: Assets\Prefabs.meta
       fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs.meta
       projectPath: Assets\Prefabs.meta
@@ -972,21 +2010,102 @@ MonoBehaviour:
       originalPath: 
       indexStatus: 1
       workTreeStatus: 1
+    - path: Assets\Prefabs\Player\leopard.prefab
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\leopard.prefab
+      projectPath: Assets\Prefabs\Player\leopard.prefab
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Prefabs\Player\leopard.prefab.meta
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\leopard.prefab.meta
+      projectPath: Assets\Prefabs\Player\leopard.prefab.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Prefabs\Player\Player.cs
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\Player.cs
+      projectPath: Assets\Prefabs\Player\Player.cs
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Prefabs\Player\Player.cs.meta
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\Player.cs.meta
+      projectPath: Assets\Prefabs\Player\Player.cs.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Scenes\SampleScene.unity
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Scenes\SampleScene.unity
+      projectPath: Assets\Scenes\SampleScene.unity
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Assets\Settings\Build Profiles.meta
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Settings\Build
+        Profiles.meta
+      projectPath: Assets\Settings\Build Profiles.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Settings\Build Profiles\Padrao.asset
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Settings\Build
+        Profiles\Padrao.asset
+      projectPath: Assets\Settings\Build Profiles\Padrao.asset
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Assets\Settings\Build Profiles\Padrao.asset.meta
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Settings\Build
+        Profiles\Padrao.asset.meta
+      projectPath: Assets\Settings\Build Profiles\Padrao.asset.meta
+      originalPath: 
+      indexStatus: 1
+      workTreeStatus: 1
+    - path: Packages\manifest.json
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Packages\manifest.json
+      projectPath: Packages\manifest.json
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Packages\packages-lock.json
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Packages\packages-lock.json
+      projectPath: Packages\packages-lock.json
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: ProjectSettings\EditorBuildSettings.asset
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\ProjectSettings\EditorBuildSettings.asset
+      projectPath: ProjectSettings\EditorBuildSettings.asset
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: ProjectSettings\TagManager.asset
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\ProjectSettings\TagManager.asset
+      projectPath: ProjectSettings\TagManager.asset
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
     - path: UserSettings\Layouts\default-6000.dwlt
       fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\UserSettings\Layouts\default-6000.dwlt
       projectPath: UserSettings\Layouts\default-6000.dwlt
       originalPath: 
       indexStatus: 0
       workTreeStatus: 3
-    changedFilesText: 5 changed files
+    - path: UserSettings\Search.settings
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\UserSettings\Search.settings
+      projectPath: UserSettings\Search.settings
+      originalPath: 
+      indexStatus: 0
+      workTreeStatus: 3
+    changedFilesText: 26 changed files
     lastCurrentBranchChangedEvent:
-      updatedTimeString: 0001-01-01T00:00:00.000+00:00
+      updatedTimeString: 2025-04-18T15:30:14.658-03:00
       cacheType: 1
     lastStatusEntriesChangedEvent:
-      updatedTimeString: 0001-01-01T00:00:00.000+00:00
+      updatedTimeString: 2025-04-18T15:48:05.569-03:00
       cacheType: 6
     lastLocksChangedEvent:
-      updatedTimeString: 0001-01-01T00:00:00.000+00:00
+      updatedTimeString: 2025-04-18T15:47:31.523-03:00
       cacheType: 7
   historyView:
     currentLogHasUpdate: 0
@@ -1924,7 +3043,7 @@ MonoBehaviour:
   currentRemoteName: origin
   currentBranch: master
   currentRemoteUrl: https://github.com/ferr-ffk/selva-unity3d.git
-  statusAhead: 0
+  statusAhead: 3
   statusBehind: 0
   hasItemsToCommit: 1
   isTrackingRemoteBranch: 1
@@ -1942,10 +3061,10 @@ MonoBehaviour:
     updatedTimeString: 2025-04-11T09:36:08.396-03:00
     cacheType: 1
   lastTrackingStatusChangedEvent:
-    updatedTimeString: 2025-04-11T09:45:43.861-03:00
+    updatedTimeString: 2025-04-18T14:13:45.029-03:00
     cacheType: 5
   lastStatusEntriesChangedEvent:
-    updatedTimeString: 2025-04-11T09:45:43.838-03:00
+    updatedTimeString: 2025-04-18T14:09:54.206-03:00
     cacheType: 6
   pullButtonContent:
     m_Text: Pull
@@ -1967,7 +3086,7 @@ MonoBehaviour:
     m_Image: {fileID: 0}
     m_Tooltip: 
     m_TextWithWhitespace: "Fetch\u200B"
-  repositoryProgressValue: 1
+  repositoryProgressValue: 0
   repositoryProgressMessage: 
   appManagerProgressValue: 1
   appManagerProgressMessage: 
@@ -1994,7 +3113,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 24
+    y: 79
     width: 1057
     height: 437
   m_SerializedDataModeController:
@@ -2495,9 +3614,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 0.5042206, y: 0.2846373, z: 0.9025067}
+    m_Target: {x: 7.3541846, y: 4.41865, z: 2.4913082}
     speed: 2
-    m_Value: {x: 0.5042206, y: 0.2846373, z: 0.9025067}
+    m_Value: {x: 7.3541846, y: 4.41865, z: 2.4913082}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2543,20 +3662,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.045567796, y: 0.9103033, z: -0.10422961, w: -0.39803323}
+    m_Target: {x: -0.29897088, y: 0.5910582, z: -0.25024605, w: -0.7061519}
     speed: 2
-    m_Value: {x: -0.045567278, y: 0.910293, z: -0.10422843, w: -0.39802873}
+    m_Value: {x: -0.29896984, y: 0.59105617, z: -0.25024518, w: -0.70614946}
   m_Size:
-    m_Target: 1.0960205
+    m_Target: 3.7988143
     speed: 2
-    m_Value: 1.0960205
+    m_Value: 3.7988143
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1.2039998
-    m_SpeedNormalized: 0.5999999
+    m_Speed: 0.66670007
+    m_SpeedNormalized: 0.33000004
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -2729,7 +3848,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -1260
+  m_LastSelectedObjectID: -1262
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -2751,8 +3870,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Hierarchy\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1
-    y: 24
+    x: 1058
+    y: 79
     width: 354
     height: 482
   m_SerializedDataModeController:
@@ -2771,7 +3890,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 14fbffff16fbffff
+      m_ExpandedIDs: 12fbffff14fbffff1cb20000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2817,8 +3936,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Project\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1
-    y: 532
+    x: 1058
+    y: 587
     width: 354
     height: 447
   m_SerializedDataModeController:
@@ -2843,7 +3962,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Prefabs/Player
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -2861,7 +3980,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 72330000
     m_LastClickedID: 13170
-    m_ExpandedIDs: 000000006ab200006cb200006eb2000070b2000072b2000074b2000076b2000078b200007ab200007cb200007eb2000080b2000082b2000084b20000
+    m_ExpandedIDs: 00000000b8b20000f8b20000fab20000fcb20000feb2000000b3000002b3000004b3000006b3000008b300000ab300000cb300000eb3000010b30000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2890,7 +4009,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006ab200006cb200006eb2000070b2000072b2000074b2000076b2000078b200007ab200007cb200007eb2000080b2000082b2000084b20000
+    m_ExpandedIDs: ffffffff00000000b8b20000f8b20000fab20000fcb20000feb2000000b3000002b3000004b3000006b3000008b300000ab300000cb300000eb3000010b30000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2969,8 +4088,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1415
-    y: 24
+    x: 1414
+    y: 79
     width: 505
     height: 955
   m_SerializedDataModeController:
@@ -2987,7 +4106,7 @@ MonoBehaviour:
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
   m_PreviewResizer:
-    m_CachedPref: 381
+    m_CachedPref: 254
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
@@ -3019,7 +4138,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 487
+    y: 542
     width: 1057
     height: 492
   m_SerializedDataModeController:
@@ -3049,20 +4168,23 @@ MonoBehaviour:
   m_UseMipMap: 0
   m_SimulatorState:
     controlPanelVisible: 0
-    controlPanelWidth: NaN
+    controlPanelWidth: 0
     controlPanelFoldoutKeys:
     - UnityEditor.AdaptivePerformance.Editor.AdaptivePerformanceUIExtension
+    - UnityEditor.AdaptivePerformance.Samsung.Android.Editor.AdaptivePerformanceVRRUIExtension
     - UnityEditor.DeviceSimulation.ApplicationSettingsPlugin
-    controlPanelFoldoutValues: 0001
+    controlPanelFoldoutValues: 000001
     pluginNames:
     - UnityEditor.AdaptivePerformance.Editor.AdaptivePerformanceUIExtension
+    - UnityEditor.AdaptivePerformance.Samsung.Android.Editor.AdaptivePerformanceVRRUIExtension
     - UnityEditor.DeviceSimulation.ApplicationSettingsPlugin
     - UnityEngine.InputSystem.Editor.InputSystemPlugin
     pluginStates:
     - '{"m_SerializationStates":{"thermalFoldout":false,"performanceFoldout":false,"developerFoldout":false,"indexerFoldout":false,"scalersFoldout":false,"deviceSettingsFoldout":false}}'
+    - '{"m_SerializationStates":{"settingsFoldout":false,"vrrFoldout":false,"androidSystemFoldout":false}}'
     - '{}'
     - '{}'
-    scale: 10
+    scale: 39
     fitToScreenEnabled: 1
     rotationDegree: 270
     highlightSafeAreaEnabled: 0
