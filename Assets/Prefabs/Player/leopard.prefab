@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 9058014476339472962}
   m_Layer: 0
   m_Name: FreeLook Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -520,6 +520,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movementComponent: {fileID: 5203276251078053181}
   _movementReference: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  _lookReference: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  _camera: {fileID: 7203929248796926465}
 --- !u!54 &4147335303912733525
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -566,5 +568,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.018556366, y: 0.038201097, z: 0.023297599}
-  m_Center: {x: 0, y: 0.004179732, z: 0.0006985206}
+  m_Size: {x: 0.36539745, y: 0.8697393, z: 1.420098}
+  m_Center: {x: 0, y: 0.029465169, z: -0.16243845}
