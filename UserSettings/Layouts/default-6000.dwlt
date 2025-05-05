@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 100
+  controlID: 101
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -549,12 +549,13 @@ MonoBehaviour:
         - e42f4cb3c2bff69409b991eaad00a763
         - e13d15a8c1c5b1a4d816d7bb60b0fe07
         - 198a528580093a5449b19e88c223fd79
-        - 6f2f68235e1477e4b96d759ec573d976
+        - 9cee5e1345cb6aa468cad77c9422d257
         - f795d6ea09d88c34fa2ce609c1bd784f
-        - 99cdf2e5ee4d827438efe64240edac5c
+        - 0d45ef79da44bbc4a945cad5bba224d6
+        - faa2bd8329cb308488793eeb0e0963dd
+        - 33acc3f069547e14bbb9c0bbc7018002
         - 328e91b56ad0fe24b8d1b6782a81fd63
         - 90a5c56f2c23ca94482eb2f146753c7c
-        - a08019ae3ff54d14e90cda52534b70c5
         - 965a53e394b16bc4db29c753754d4a75
         - 58ce51be860a79141907a56a387f1464
         - 9c53962885c2c4f449125a979d6ad240
@@ -563,7 +564,7 @@ MonoBehaviour:
         - b364118da32569b4e86ee7ee4c5c8964
         - f6cef624d047a1042916ebcb74f273b1
         - 0000000000000000b000000000000000
-        - 00000000000000003000000000000000
+        - 00000000000000004000000000000000
         values:
         - path: Assets
           label: Assets
@@ -605,7 +606,7 @@ MonoBehaviour:
           label: AdaptivePerformanceGeneralSettings.asset
           level: 2
           isFolder: 0
-          isContainer: 1
+          isContainer: 0
           isCollapsed: 0
           isHidden: 0
           isActive: 0
@@ -618,8 +619,8 @@ MonoBehaviour:
               Performance\AdaptivePerformanceGeneralSettings.asset
             projectPath: Assets\Adaptive Performance\AdaptivePerformanceGeneralSettings.asset
             originalPath: 
-            indexStatus: 1
-            workTreeStatus: 1
+            indexStatus: 0
+            workTreeStatus: 3
         - path: Assets\Adaptive Performance\Provider
           label: Provider
           level: 2
@@ -638,8 +639,8 @@ MonoBehaviour:
             originalPath: 
             indexStatus: 0
             workTreeStatus: 0
-        - path: Assets\Adaptive Performance\Provider\Samsung Android Provider Loader.asset
-          label: Samsung Android Provider Loader.asset
+        - path: Assets\Adaptive Performance\Provider\Google Android Provider Loader.asset
+          label: Google Android Provider Loader.asset
           level: 3
           isFolder: 0
           isContainer: 1
@@ -650,10 +651,10 @@ MonoBehaviour:
           checkState: 0
           isLocked: 0
           gitStatusEntry:
-            path: Assets\Adaptive Performance\Provider\Samsung Android Provider Loader.asset
+            path: Assets\Adaptive Performance\Provider\Google Android Provider Loader.asset
             fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
-              Performance\Provider\Samsung Android Provider Loader.asset
-            projectPath: Assets\Adaptive Performance\Provider\Samsung Android Provider
+              Performance\Provider\Google Android Provider Loader.asset
+            projectPath: Assets\Adaptive Performance\Provider\Google Android Provider
               Loader.asset
             originalPath: 
             indexStatus: 1
@@ -676,8 +677,8 @@ MonoBehaviour:
             originalPath: 
             indexStatus: 0
             workTreeStatus: 0
-        - path: Assets\Adaptive Performance\Settings\Samsung Android Provider Settings.asset
-          label: Samsung Android Provider Settings.asset
+        - path: Assets\Adaptive Performance\Settings\Google Android Provider Settings.asset
+          label: Google Android Provider Settings.asset
           level: 3
           isFolder: 0
           isContainer: 1
@@ -688,11 +689,47 @@ MonoBehaviour:
           checkState: 0
           isLocked: 0
           gitStatusEntry:
-            path: Assets\Adaptive Performance\Settings\Samsung Android Provider Settings.asset
+            path: Assets\Adaptive Performance\Settings\Google Android Provider Settings.asset
             fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
-              Performance\Settings\Samsung Android Provider Settings.asset
-            projectPath: Assets\Adaptive Performance\Settings\Samsung Android Provider
+              Performance\Settings\Google Android Provider Settings.asset
+            projectPath: Assets\Adaptive Performance\Settings\Google Android Provider
               Settings.asset
+            originalPath: 
+            indexStatus: 1
+            workTreeStatus: 1
+        - path: Assets\Component
+          label: Component
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Component\LaunchComponent.cs
+          label: LaunchComponent.cs
+          level: 2
+          isFolder: 0
+          isContainer: 1
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: Assets\Component\LaunchComponent.cs
+            fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Component\LaunchComponent.cs
+            projectPath: Assets\Component\LaunchComponent.cs
             originalPath: 
             indexStatus: 1
             workTreeStatus: 1
@@ -732,29 +769,11 @@ MonoBehaviour:
             originalPath: 
             indexStatus: 0
             workTreeStatus: 0
-        - path: Assets\Prefabs\Player\leopard.fbx
-          label: leopard.fbx
-          level: 3
-          isFolder: 0
-          isContainer: 1
-          isCollapsed: 0
-          isHidden: 0
-          isActive: 0
-          treeIsCheckable: 1
-          checkState: 0
-          isLocked: 0
-          gitStatusEntry:
-            path: Assets\Prefabs\Player\leopard.fbx
-            fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\leopard.fbx
-            projectPath: Assets\Prefabs\Player\leopard.fbx
-            originalPath: 
-            indexStatus: 1
-            workTreeStatus: 1
         - path: Assets\Prefabs\Player\leopard.prefab
           label: leopard.prefab
           level: 3
           isFolder: 0
-          isContainer: 1
+          isContainer: 0
           isCollapsed: 0
           isHidden: 0
           isActive: 0
@@ -766,13 +785,13 @@ MonoBehaviour:
             fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\leopard.prefab
             projectPath: Assets\Prefabs\Player\leopard.prefab
             originalPath: 
-            indexStatus: 1
-            workTreeStatus: 1
+            indexStatus: 0
+            workTreeStatus: 3
         - path: Assets\Prefabs\Player\Player.cs
           label: Player.cs
           level: 3
           isFolder: 0
-          isContainer: 1
+          isContainer: 0
           isCollapsed: 0
           isHidden: 0
           isActive: 0
@@ -784,8 +803,8 @@ MonoBehaviour:
             fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\Player.cs
             projectPath: Assets\Prefabs\Player\Player.cs
             originalPath: 
-            indexStatus: 1
-            workTreeStatus: 1
+            indexStatus: 0
+            workTreeStatus: 3
         - path: Assets\Scenes
           label: Scenes
           level: 1
@@ -862,7 +881,7 @@ MonoBehaviour:
           label: Padrao.asset
           level: 3
           isFolder: 0
-          isContainer: 1
+          isContainer: 0
           isCollapsed: 0
           isHidden: 0
           isActive: 0
@@ -875,8 +894,8 @@ MonoBehaviour:
               Profiles\Padrao.asset
             projectPath: Assets\Settings\Build Profiles\Padrao.asset
             originalPath: 
-            indexStatus: 1
-            workTreeStatus: 1
+            indexStatus: 0
+            workTreeStatus: 3
         - path: ProjectSettings\EditorBuildSettings.asset
           label: EditorBuildSettings.asset
           level: 1
@@ -895,8 +914,8 @@ MonoBehaviour:
             originalPath: 
             indexStatus: 0
             workTreeStatus: 3
-        - path: ProjectSettings\TagManager.asset
-          label: TagManager.asset
+        - path: ProjectSettings\ProjectSettings.asset
+          label: ProjectSettings.asset
           level: 1
           isFolder: 0
           isContainer: 0
@@ -907,9 +926,9 @@ MonoBehaviour:
           checkState: 0
           isLocked: 0
           gitStatusEntry:
-            path: ProjectSettings\TagManager.asset
-            fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\ProjectSettings\TagManager.asset
-            projectPath: ProjectSettings\TagManager.asset
+            path: ProjectSettings\ProjectSettings.asset
+            fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\ProjectSettings\ProjectSettings.asset
+            projectPath: ProjectSettings\ProjectSettings.asset
             originalPath: 
             indexStatus: 0
             workTreeStatus: 3
@@ -919,6 +938,7 @@ MonoBehaviour:
         - Assets\Adaptive Performance
         - Assets\Adaptive Performance\Provider
         - Assets\Adaptive Performance\Settings
+        - Assets\Component
         - Assets\Prefabs
         - Assets\Prefabs\Player
         - Assets\Scenes
@@ -986,6 +1006,24 @@ MonoBehaviour:
         - path: Assets\Adaptive Performance\Settings
           label: Settings
           level: 2
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 1
+          checkState: 0
+          isLocked: 0
+          gitStatusEntry:
+            path: 
+            fullPath: 
+            projectPath: 
+            originalPath: 
+            indexStatus: 0
+            workTreeStatus: 0
+        - path: Assets\Component
+          label: Component
+          level: 1
           isFolder: 1
           isContainer: 0
           isCollapsed: 0
@@ -1231,7 +1269,7 @@ MonoBehaviour:
         label: AdaptivePerformanceGeneralSettings.asset
         level: 2
         isFolder: 0
-        isContainer: 1
+        isContainer: 0
         isCollapsed: 0
         isHidden: 0
         isActive: 0
@@ -1244,46 +1282,8 @@ MonoBehaviour:
             Performance\AdaptivePerformanceGeneralSettings.asset
           projectPath: Assets\Adaptive Performance\AdaptivePerformanceGeneralSettings.asset
           originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
-      - path: Assets\Adaptive Performance\AdaptivePerformanceGeneralSettings.asset.meta
-        label: AdaptivePerformanceGeneralSettings.asset.meta
-        level: 3
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets\Adaptive Performance\AdaptivePerformanceGeneralSettings.asset.meta
-          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
-            Performance\AdaptivePerformanceGeneralSettings.asset.meta
-          projectPath: Assets\Adaptive Performance\AdaptivePerformanceGeneralSettings.asset.meta
-          originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
-      - path: Assets\Adaptive Performance\Provider.meta
-        label: Provider.meta
-        level: 2
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets\Adaptive Performance\Provider.meta
-          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
-            Performance\Provider.meta
-          projectPath: Assets\Adaptive Performance\Provider.meta
-          originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
+          indexStatus: 0
+          workTreeStatus: 3
       - path: Assets\Adaptive Performance\Provider
         label: Provider
         level: 2
@@ -1302,8 +1302,8 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-      - path: Assets\Adaptive Performance\Provider\Samsung Android Provider Loader.asset
-        label: Samsung Android Provider Loader.asset
+      - path: Assets\Adaptive Performance\Provider\Google Android Provider Loader.asset
+        label: Google Android Provider Loader.asset
         level: 3
         isFolder: 0
         isContainer: 1
@@ -1314,16 +1314,16 @@ MonoBehaviour:
         checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: Assets\Adaptive Performance\Provider\Samsung Android Provider Loader.asset
+          path: Assets\Adaptive Performance\Provider\Google Android Provider Loader.asset
           fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
-            Performance\Provider\Samsung Android Provider Loader.asset
-          projectPath: Assets\Adaptive Performance\Provider\Samsung Android Provider
+            Performance\Provider\Google Android Provider Loader.asset
+          projectPath: Assets\Adaptive Performance\Provider\Google Android Provider
             Loader.asset
           originalPath: 
           indexStatus: 1
           workTreeStatus: 1
-      - path: Assets\Adaptive Performance\Provider\Samsung Android Provider Loader.asset.meta
-        label: Samsung Android Provider Loader.asset.meta
+      - path: Assets\Adaptive Performance\Provider\Google Android Provider Loader.asset.meta
+        label: Google Android Provider Loader.asset.meta
         level: 4
         isFolder: 0
         isContainer: 0
@@ -1334,10 +1334,10 @@ MonoBehaviour:
         checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: Assets\Adaptive Performance\Provider\Samsung Android Provider Loader.asset.meta
+          path: Assets\Adaptive Performance\Provider\Google Android Provider Loader.asset.meta
           fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
-            Performance\Provider\Samsung Android Provider Loader.asset.meta
-          projectPath: Assets\Adaptive Performance\Provider\Samsung Android Provider
+            Performance\Provider\Google Android Provider Loader.asset.meta
+          projectPath: Assets\Adaptive Performance\Provider\Google Android Provider
             Loader.asset.meta
           originalPath: 
           indexStatus: 1
@@ -1360,8 +1360,8 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-      - path: Assets\Adaptive Performance\Settings\Samsung Android Provider Settings.asset
-        label: Samsung Android Provider Settings.asset
+      - path: Assets\Adaptive Performance\Settings\Google Android Provider Settings.asset
+        label: Google Android Provider Settings.asset
         level: 3
         isFolder: 0
         isContainer: 1
@@ -1372,16 +1372,16 @@ MonoBehaviour:
         checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: Assets\Adaptive Performance\Settings\Samsung Android Provider Settings.asset
+          path: Assets\Adaptive Performance\Settings\Google Android Provider Settings.asset
           fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
-            Performance\Settings\Samsung Android Provider Settings.asset
-          projectPath: Assets\Adaptive Performance\Settings\Samsung Android Provider
+            Performance\Settings\Google Android Provider Settings.asset
+          projectPath: Assets\Adaptive Performance\Settings\Google Android Provider
             Settings.asset
           originalPath: 
           indexStatus: 1
           workTreeStatus: 1
-      - path: Assets\Adaptive Performance\Settings\Samsung Android Provider Settings.asset.meta
-        label: Samsung Android Provider Settings.asset.meta
+      - path: Assets\Adaptive Performance\Settings\Google Android Provider Settings.asset.meta
+        label: Google Android Provider Settings.asset.meta
         level: 4
         isFolder: 0
         isContainer: 0
@@ -1392,18 +1392,18 @@ MonoBehaviour:
         checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: Assets\Adaptive Performance\Settings\Samsung Android Provider Settings.asset.meta
+          path: Assets\Adaptive Performance\Settings\Google Android Provider Settings.asset.meta
           fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
-            Performance\Settings\Samsung Android Provider Settings.asset.meta
-          projectPath: Assets\Adaptive Performance\Settings\Samsung Android Provider
+            Performance\Settings\Google Android Provider Settings.asset.meta
+          projectPath: Assets\Adaptive Performance\Settings\Google Android Provider
             Settings.asset.meta
           originalPath: 
           indexStatus: 1
           workTreeStatus: 1
-      - path: Assets\Component.meta
-        label: Component.meta
+      - path: Assets\Component
+        label: Component
         level: 1
-        isFolder: 0
+        isFolder: 1
         isContainer: 0
         isCollapsed: 0
         isHidden: 0
@@ -1412,15 +1412,33 @@ MonoBehaviour:
         checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: Assets\Component.meta
-          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Component.meta
-          projectPath: Assets\Component.meta
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      - path: Assets\Component\LaunchComponent.cs
+        label: LaunchComponent.cs
+        level: 2
+        isFolder: 0
+        isContainer: 1
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: Assets\Component\LaunchComponent.cs
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Component\LaunchComponent.cs
+          projectPath: Assets\Component\LaunchComponent.cs
           originalPath: 
           indexStatus: 1
           workTreeStatus: 1
-      - path: Assets\Prefabs.meta
-        label: Prefabs.meta
-        level: 1
+      - path: Assets\Component\LaunchComponent.cs.meta
+        label: LaunchComponent.cs.meta
+        level: 3
         isFolder: 0
         isContainer: 0
         isCollapsed: 0
@@ -1430,9 +1448,9 @@ MonoBehaviour:
         checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: Assets\Prefabs.meta
-          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs.meta
-          projectPath: Assets\Prefabs.meta
+          path: Assets\Component\LaunchComponent.cs.meta
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Component\LaunchComponent.cs.meta
+          projectPath: Assets\Component\LaunchComponent.cs.meta
           originalPath: 
           indexStatus: 1
           workTreeStatus: 1
@@ -1454,24 +1472,6 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-      - path: Assets\Prefabs\Player.meta
-        label: Player.meta
-        level: 2
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets\Prefabs\Player.meta
-          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player.meta
-          projectPath: Assets\Prefabs\Player.meta
-          originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
       - path: Assets\Prefabs\Player
         label: Player
         level: 2
@@ -1490,47 +1490,11 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-      - path: Assets\Prefabs\Player\leopard.fbx
-        label: leopard.fbx
-        level: 3
-        isFolder: 0
-        isContainer: 1
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets\Prefabs\Player\leopard.fbx
-          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\leopard.fbx
-          projectPath: Assets\Prefabs\Player\leopard.fbx
-          originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
-      - path: Assets\Prefabs\Player\leopard.fbx.meta
-        label: leopard.fbx.meta
-        level: 4
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets\Prefabs\Player\leopard.fbx.meta
-          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\leopard.fbx.meta
-          projectPath: Assets\Prefabs\Player\leopard.fbx.meta
-          originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
       - path: Assets\Prefabs\Player\leopard.prefab
         label: leopard.prefab
         level: 3
         isFolder: 0
-        isContainer: 1
+        isContainer: 0
         isCollapsed: 0
         isHidden: 0
         isActive: 0
@@ -1542,31 +1506,13 @@ MonoBehaviour:
           fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\leopard.prefab
           projectPath: Assets\Prefabs\Player\leopard.prefab
           originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
-      - path: Assets\Prefabs\Player\leopard.prefab.meta
-        label: leopard.prefab.meta
-        level: 4
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets\Prefabs\Player\leopard.prefab.meta
-          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\leopard.prefab.meta
-          projectPath: Assets\Prefabs\Player\leopard.prefab.meta
-          originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
+          indexStatus: 0
+          workTreeStatus: 3
       - path: Assets\Prefabs\Player\Player.cs
         label: Player.cs
         level: 3
         isFolder: 0
-        isContainer: 1
+        isContainer: 0
         isCollapsed: 0
         isHidden: 0
         isActive: 0
@@ -1578,26 +1524,8 @@ MonoBehaviour:
           fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\Player.cs
           projectPath: Assets\Prefabs\Player\Player.cs
           originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
-      - path: Assets\Prefabs\Player\Player.cs.meta
-        label: Player.cs.meta
-        level: 4
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets\Prefabs\Player\Player.cs.meta
-          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\Player.cs.meta
-          projectPath: Assets\Prefabs\Player\Player.cs.meta
-          originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
+          indexStatus: 0
+          workTreeStatus: 3
       - path: Assets\Scenes
         label: Scenes
         level: 1
@@ -1652,25 +1580,6 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 0
-      - path: Assets\Settings\Build Profiles.meta
-        label: Build Profiles.meta
-        level: 2
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets\Settings\Build Profiles.meta
-          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Settings\Build
-            Profiles.meta
-          projectPath: Assets\Settings\Build Profiles.meta
-          originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
       - path: Assets\Settings\Build Profiles
         label: Build Profiles
         level: 2
@@ -1693,7 +1602,7 @@ MonoBehaviour:
         label: Padrao.asset
         level: 3
         isFolder: 0
-        isContainer: 1
+        isContainer: 0
         isCollapsed: 0
         isHidden: 0
         isActive: 0
@@ -1706,27 +1615,8 @@ MonoBehaviour:
             Profiles\Padrao.asset
           projectPath: Assets\Settings\Build Profiles\Padrao.asset
           originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
-      - path: Assets\Settings\Build Profiles\Padrao.asset.meta
-        label: Padrao.asset.meta
-        level: 4
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: Assets\Settings\Build Profiles\Padrao.asset.meta
-          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Settings\Build
-            Profiles\Padrao.asset.meta
-          projectPath: Assets\Settings\Build Profiles\Padrao.asset.meta
-          originalPath: 
-          indexStatus: 1
-          workTreeStatus: 1
+          indexStatus: 0
+          workTreeStatus: 3
       - path: Packages
         label: Packages
         level: 0
@@ -1817,8 +1707,8 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 3
-      - path: ProjectSettings\TagManager.asset
-        label: TagManager.asset
+      - path: ProjectSettings\ProjectSettings.asset
+        label: ProjectSettings.asset
         level: 1
         isFolder: 0
         isContainer: 0
@@ -1829,9 +1719,9 @@ MonoBehaviour:
         checkState: 0
         isLocked: 0
         gitStatusEntry:
-          path: ProjectSettings\TagManager.asset
-          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\ProjectSettings\TagManager.asset
-          projectPath: ProjectSettings\TagManager.asset
+          path: ProjectSettings\ProjectSettings.asset
+          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\ProjectSettings\ProjectSettings.asset
+          projectPath: ProjectSettings\ProjectSettings.asset
           originalPath: 
           indexStatus: 0
           workTreeStatus: 3
@@ -1889,24 +1779,6 @@ MonoBehaviour:
           originalPath: 
           indexStatus: 0
           workTreeStatus: 3
-      - path: UserSettings\Search.settings
-        label: Search.settings
-        level: 1
-        isFolder: 0
-        isContainer: 0
-        isCollapsed: 0
-        isHidden: 0
-        isActive: 0
-        treeIsCheckable: 1
-        checkState: 0
-        isLocked: 0
-        gitStatusEntry:
-          path: UserSettings\Search.settings
-          fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\UserSettings\Search.settings
-          projectPath: UserSettings\Search.settings
-          originalPath: 
-          indexStatus: 0
-          workTreeStatus: 3
       selectedNode:
         path: 
         label: 
@@ -1932,81 +1804,45 @@ MonoBehaviour:
         Performance\AdaptivePerformanceGeneralSettings.asset
       projectPath: Assets\Adaptive Performance\AdaptivePerformanceGeneralSettings.asset
       originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
-    - path: Assets\Adaptive Performance\AdaptivePerformanceGeneralSettings.asset.meta
+      indexStatus: 0
+      workTreeStatus: 3
+    - path: Assets\Adaptive Performance\Provider\Google Android Provider Loader.asset
       fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
-        Performance\AdaptivePerformanceGeneralSettings.asset.meta
-      projectPath: Assets\Adaptive Performance\AdaptivePerformanceGeneralSettings.asset.meta
+        Performance\Provider\Google Android Provider Loader.asset
+      projectPath: Assets\Adaptive Performance\Provider\Google Android Provider Loader.asset
       originalPath: 
       indexStatus: 1
       workTreeStatus: 1
-    - path: Assets\Adaptive Performance\Provider.meta
+    - path: Assets\Adaptive Performance\Provider\Google Android Provider Loader.asset.meta
       fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
-        Performance\Provider.meta
-      projectPath: Assets\Adaptive Performance\Provider.meta
+        Performance\Provider\Google Android Provider Loader.asset.meta
+      projectPath: Assets\Adaptive Performance\Provider\Google Android Provider Loader.asset.meta
       originalPath: 
       indexStatus: 1
       workTreeStatus: 1
-    - path: Assets\Adaptive Performance\Provider\Samsung Android Provider Loader.asset
+    - path: Assets\Adaptive Performance\Settings\Google Android Provider Settings.asset
       fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
-        Performance\Provider\Samsung Android Provider Loader.asset
-      projectPath: Assets\Adaptive Performance\Provider\Samsung Android Provider
-        Loader.asset
+        Performance\Settings\Google Android Provider Settings.asset
+      projectPath: Assets\Adaptive Performance\Settings\Google Android Provider Settings.asset
       originalPath: 
       indexStatus: 1
       workTreeStatus: 1
-    - path: Assets\Adaptive Performance\Provider\Samsung Android Provider Loader.asset.meta
+    - path: Assets\Adaptive Performance\Settings\Google Android Provider Settings.asset.meta
       fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
-        Performance\Provider\Samsung Android Provider Loader.asset.meta
-      projectPath: Assets\Adaptive Performance\Provider\Samsung Android Provider
-        Loader.asset.meta
+        Performance\Settings\Google Android Provider Settings.asset.meta
+      projectPath: Assets\Adaptive Performance\Settings\Google Android Provider Settings.asset.meta
       originalPath: 
       indexStatus: 1
       workTreeStatus: 1
-    - path: Assets\Adaptive Performance\Settings\Samsung Android Provider Settings.asset
-      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
-        Performance\Settings\Samsung Android Provider Settings.asset
-      projectPath: Assets\Adaptive Performance\Settings\Samsung Android Provider
-        Settings.asset
+    - path: Assets\Component\LaunchComponent.cs
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Component\LaunchComponent.cs
+      projectPath: Assets\Component\LaunchComponent.cs
       originalPath: 
       indexStatus: 1
       workTreeStatus: 1
-    - path: Assets\Adaptive Performance\Settings\Samsung Android Provider Settings.asset.meta
-      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Adaptive
-        Performance\Settings\Samsung Android Provider Settings.asset.meta
-      projectPath: Assets\Adaptive Performance\Settings\Samsung Android Provider
-        Settings.asset.meta
-      originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
-    - path: Assets\Component.meta
-      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Component.meta
-      projectPath: Assets\Component.meta
-      originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
-    - path: Assets\Prefabs.meta
-      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs.meta
-      projectPath: Assets\Prefabs.meta
-      originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
-    - path: Assets\Prefabs\Player.meta
-      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player.meta
-      projectPath: Assets\Prefabs\Player.meta
-      originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
-    - path: Assets\Prefabs\Player\leopard.fbx
-      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\leopard.fbx
-      projectPath: Assets\Prefabs\Player\leopard.fbx
-      originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
-    - path: Assets\Prefabs\Player\leopard.fbx.meta
-      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\leopard.fbx.meta
-      projectPath: Assets\Prefabs\Player\leopard.fbx.meta
+    - path: Assets\Component\LaunchComponent.cs.meta
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Component\LaunchComponent.cs.meta
+      projectPath: Assets\Component\LaunchComponent.cs.meta
       originalPath: 
       indexStatus: 1
       workTreeStatus: 1
@@ -2014,53 +1850,27 @@ MonoBehaviour:
       fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\leopard.prefab
       projectPath: Assets\Prefabs\Player\leopard.prefab
       originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
-    - path: Assets\Prefabs\Player\leopard.prefab.meta
-      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\leopard.prefab.meta
-      projectPath: Assets\Prefabs\Player\leopard.prefab.meta
-      originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
+      indexStatus: 0
+      workTreeStatus: 3
     - path: Assets\Prefabs\Player\Player.cs
       fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\Player.cs
       projectPath: Assets\Prefabs\Player\Player.cs
       originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
-    - path: Assets\Prefabs\Player\Player.cs.meta
-      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Prefabs\Player\Player.cs.meta
-      projectPath: Assets\Prefabs\Player\Player.cs.meta
-      originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
+      indexStatus: 0
+      workTreeStatus: 3
     - path: Assets\Scenes\SampleScene.unity
       fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Scenes\SampleScene.unity
       projectPath: Assets\Scenes\SampleScene.unity
       originalPath: 
       indexStatus: 0
       workTreeStatus: 3
-    - path: Assets\Settings\Build Profiles.meta
-      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Settings\Build
-        Profiles.meta
-      projectPath: Assets\Settings\Build Profiles.meta
-      originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
     - path: Assets\Settings\Build Profiles\Padrao.asset
       fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Settings\Build
         Profiles\Padrao.asset
       projectPath: Assets\Settings\Build Profiles\Padrao.asset
       originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
-    - path: Assets\Settings\Build Profiles\Padrao.asset.meta
-      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Assets\Settings\Build
-        Profiles\Padrao.asset.meta
-      projectPath: Assets\Settings\Build Profiles\Padrao.asset.meta
-      originalPath: 
-      indexStatus: 1
-      workTreeStatus: 1
+      indexStatus: 0
+      workTreeStatus: 3
     - path: Packages\manifest.json
       fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\Packages\manifest.json
       projectPath: Packages\manifest.json
@@ -2079,9 +1889,9 @@ MonoBehaviour:
       originalPath: 
       indexStatus: 0
       workTreeStatus: 3
-    - path: ProjectSettings\TagManager.asset
-      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\ProjectSettings\TagManager.asset
-      projectPath: ProjectSettings\TagManager.asset
+    - path: ProjectSettings\ProjectSettings.asset
+      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\ProjectSettings\ProjectSettings.asset
+      projectPath: ProjectSettings\ProjectSettings.asset
       originalPath: 
       indexStatus: 0
       workTreeStatus: 3
@@ -2091,13 +1901,7 @@ MonoBehaviour:
       originalPath: 
       indexStatus: 0
       workTreeStatus: 3
-    - path: UserSettings\Search.settings
-      fullPath: C:\Users\fe_fr\Documentos\unity meu anjo\Selva\Selva\UserSettings\Search.settings
-      projectPath: UserSettings\Search.settings
-      originalPath: 
-      indexStatus: 0
-      workTreeStatus: 3
-    changedFilesText: 26 changed files
+    changedFilesText: 16 changed files
     lastCurrentBranchChangedEvent:
       updatedTimeString: 0001-01-01T00:00:00.000+00:00
       cacheType: 1
@@ -3043,7 +2847,7 @@ MonoBehaviour:
   currentRemoteName: origin
   currentBranch: master
   currentRemoteUrl: https://github.com/ferr-ffk/selva-unity3d.git
-  statusAhead: 3
+  statusAhead: 0
   statusBehind: 0
   hasItemsToCommit: 1
   isTrackingRemoteBranch: 1
@@ -3061,10 +2865,10 @@ MonoBehaviour:
     updatedTimeString: 2025-04-11T09:36:08.396-03:00
     cacheType: 1
   lastTrackingStatusChangedEvent:
-    updatedTimeString: 2025-04-18T14:13:45.029-03:00
+    updatedTimeString: 2025-05-05T12:34:22.463-03:00
     cacheType: 5
   lastStatusEntriesChangedEvent:
-    updatedTimeString: 2025-04-18T14:09:54.206-03:00
+    updatedTimeString: 2025-05-05T12:34:22.339-03:00
     cacheType: 6
   pullButtonContent:
     m_Text: Pull
@@ -3614,9 +3418,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 13.037425, y: 4.990657, z: -14.915291}
+    m_Target: {x: -0.5277796, y: 0.4008755, z: -0.12906381}
     speed: 2
-    m_Value: {x: -1.5621479, y: -0.00907135, z: -2.5323815}
+    m_Value: {x: -18.17738, y: -1.2527738, z: -2.2801328}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -3662,13 +3466,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.027058316, y: 0.9482748, z: 0.08414192, w: 0.30492246}
+    m_Target: {x: -0.08574615, y: 0.7795781, z: -0.1094621, w: -0.61067533}
     speed: 2
-    m_Value: {x: -0.026447603, y: 0.95881605, z: -0.09523382, w: -0.26627603}
+    m_Value: {x: -0.031941578, y: 0.7453959, z: -0.035804525, w: -0.6649057}
   m_Size:
-    m_Target: 12.124355
+    m_Target: 1.2505573
     speed: 2
-    m_Value: 3.7988143
+    m_Value: 12.124355
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -3848,7 +3652,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 45728
+  m_LastSelectedObjectID: -1262
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -3890,7 +3694,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 14fbffff
+      m_ExpandedIDs: 12fbffff14fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -3980,7 +3784,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 72330000
     m_LastClickedID: 13170
-    m_ExpandedIDs: 0000000008b3000048b300004ab300004cb300004eb3000050b3000052b3000054b3000056b3000058b300005ab300005cb300005eb3000060b30000
+    m_ExpandedIDs: 0000000026b3000086b3000088b300008ab300008cb300008eb3000090b3000092b3000094b3000096b3000098b300009ab300009cb300009eb30000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -4009,7 +3813,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000008b3000048b300004ab300004cb300004eb3000050b3000052b3000054b3000056b3000058b300005ab300005cb300005eb3000060b30000
+    m_ExpandedIDs: 0000000026b3000086b3000088b300008ab300008cb300008eb3000090b3000092b3000094b3000096b3000098b300009ab300009cb300009eb30000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

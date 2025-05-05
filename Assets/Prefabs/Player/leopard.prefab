@@ -25,13 +25,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3603577134837410723}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0000000030434055, y: 0.9851093, z: -0.17192914, w: -0.000000017437925}
-  m_LocalPosition: {x: -0.0000002220869, y: 0.9145924, z: 2.540378}
+  m_LocalRotation: {x: 0.17192909, y: 9.59383e-11, z: -1.6743914e-11, w: 0.9851093}
+  m_LocalPosition: {x: 0, y: 0.9145924, z: -2.540378}
   m_LocalScale: {x: 0.036063895, y: 0.018913364, z: 0.018913364}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4621868458778280926}
-  m_LocalEulerAnglesHint: {x: 107.53, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 160.2, y: 0, z: 180.4}
 --- !u!114 &5380252803075714222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,13 +95,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7203929248796926465}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0000000030434044, y: 0.9851093, z: -0.17192914, w: -0.000000017437923}
-  m_LocalPosition: {x: -0.0000002220869, y: 0.9145924, z: 2.540378}
+  m_LocalRotation: {x: 0.17192909, y: 2.834876e-11, z: 3.7052672e-10, w: 0.9851093}
+  m_LocalPosition: {x: 0, y: 0.9145924, z: -2.540378}
   m_LocalScale: {x: 1.9067942, y: 0.99999994, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4621868458778280926}
-  m_LocalEulerAnglesHint: {x: 107.2, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 160.2, y: 0, z: 184.1}
 --- !u!114 &5232399763034194596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,8 +179,8 @@ MonoBehaviour:
     SplineCurvature: 0.5
   RecenteringTarget: 3
   HorizontalAxis:
-    Value: -180
-    Center: -180
+    Value: 0
+    Center: 0
     Range: {x: -180, y: 180}
     Wrap: 1
     Recentering:
@@ -484,6 +484,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6583726975655605171}
   m_SourcePrefab: {fileID: 100100000, guid: a08019ae3ff54d14e90cda52534b70c5, type: 3}
+--- !u!1 &2234073572638674534 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6390488637469223507, guid: a08019ae3ff54d14e90cda52534b70c5, type: 3}
+  m_PrefabInstance: {fileID: 5165230325704598581}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4621868458778280926 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a08019ae3ff54d14e90cda52534b70c5, type: 3}
@@ -544,7 +549,7 @@ MonoBehaviour:
   _lookReference: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _jumpReference: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _camera: {fileID: 7203929248796926465}
-  _armature: {fileID: 5435840681807419748}
+  _armature: {fileID: 2234073572638674534}
   _jumpTarget: {x: 0, y: 0, z: 0}
 --- !u!54 &4147335303912733525
 Rigidbody:
@@ -592,5 +597,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.36539745, y: 0.8697393, z: 1.420098}
-  m_Center: {x: 0, y: 0.029465169, z: -0.16243845}
+  m_Size: {x: 0.4162049, y: 0.88437665, z: 1.4259806}
+  m_Center: {x: 0, y: 0.43510872, z: -0.13996506}

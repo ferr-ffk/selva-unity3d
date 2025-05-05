@@ -61,6 +61,16 @@ public class Player : MonoBehaviour
         // Utiliza a rotação que a câmera está apontando, e usa para que o jogador se movimente de acordo com ela
         Quaternion cameraRotation = Quaternion.Euler(0, _camera.transform.eulerAngles.y, 0);
 
+        bool movement = direction != Vector3.zero;
+
+        // If there is movement, rotate the player based on the camera rotation value
+        if (movement)
+        {
+            Quaternion desiredRotation = Quaternion.LookRotation(direction) * cameraRotation;
+
+            _armature.transform.rotation = Quaternion.Slerp(_armature.transform.rotation, desiredRotation, Time.deltaTime * 8);
+        }
+
         // Move o Jogador
         _movementComponent.Move(gameObject, direction, cameraRotation);
 
