@@ -913,10 +913,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: leopard
       objectReference: {fileID: 0}
-    - target: {fileID: 6583726975655605171, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
