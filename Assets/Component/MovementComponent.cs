@@ -1,34 +1,21 @@
 using System;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MovementComponent : MonoBehaviour
 {
 
-    [SerializeField, Tooltip("A velocidade desejada do objeto. Deve ser definida.")]
-    private float _velocidadeDesejada;
+    [SerializeField, Tooltip("The maximum velocity the object can achieve.")]
+    private float _targetVelocity;
 
-    /// <summary>
-    /// A velocidade alvo do jogador, que pode ser alterada em tempo de execução.
-    /// </summary>
-    public float TargetVelocity { get => _velocidadeDesejada; set => _velocidadeDesejada = value; }
+    [SerializeField, Tooltip("Acceleration for given object. Defaults to 1")]
+    private float _acceleration = 1.0f;
 
-    private float _initialVelocity;
+    [SerializeField, Tooltip("The layer mask belonging to the ground.")]
+    private LayerMask _groundLayer;
 
-    /// <summary>
-    /// A velocidade inicial do objeto. É definida automaticamente.
-    /// </summary>
-    public float InitialVelocity { get => _initialVelocity; private set => _initialVelocity = value; }
-
-    [SerializeField, Tooltip("O multiplicador de velocidade ao correr. Por padrão 1,5.")]
-    private float _runningMultiplier = 1.5f;
-
-    /// <summary>
-    /// O multiplicador de velocidade ao correr. Por padrão 1,5.
-    /// </summary>
-    public float RunningMultiplier { get => _runningMultiplier; set => _runningMultiplier = value; }
-
-    [SerializeField, Tooltip("A aceleração do objeto, por padrão 1.")]
-    private float _aceleracao = 1.0f;
+    [SerializeField, Tooltip("The character's height.")]
+    private float _height = 1f;
 
     [NonSerialized]
     public float timeWalking;
@@ -37,9 +24,9 @@ public class MovementComponent : MonoBehaviour
     private CharacterController _characterController;
 
     [NonSerialized]
-    public Vector3 velocidadeAtual = Vector3.zero;
+    public Vector3 currentVelocity = Vector3.zero;
 
-    private bool isJogador;
+    private bool isPlayer;
 
     private void Start()
     {
@@ -55,10 +42,7 @@ public class MovementComponent : MonoBehaviour
         }
 
         // Pega o CharacterController do objeto, caso exista
-        isJogador = TryGetComponent<CharacterController>(out _characterController);
-
-        // Define a velocidade inicial como a velocidade desejada do objeto
-        _initialVelocity = _velocidadeDesejada;
+        isPlayer = TryGetComponent<CharacterController>(out _characterController);
     }
 
     /// <summary>
@@ -80,7 +64,7 @@ public class MovementComponent : MonoBehaviour
             // Reseta o tempo de andar
             timeWalking = 0;
 
-            velocidadeAtual = Vector3.zero;
+            currentVelocity = Vector3.zero;
 
             return;
         }
@@ -92,26 +76,35 @@ public class MovementComponent : MonoBehaviour
         Vector3 direcaoMovimento = forward * direcao;
 
         // Calcula a direção desejada de movimento
-        Vector3 velocidadeAlvo = direcaoMovimento * _velocidadeDesejada;
+        Vector3 velocidadeAlvo = direcaoMovimento * _targetVelocity;
 
         // Calcula o valor da aceleração para ser utilizada no Lerp
-        float valorAceleracao = 1 - Mathf.Exp(-_aceleracao * Time.deltaTime);
+        float valorAceleracao = 1 - Mathf.Exp(-_acceleration * Time.deltaTime);
 
         // Calcula o Lerp, que é basicamente uma forma de deixar mais suave o movimento com aceleração
-        Vector3 direcaoLerp = Vector3.Lerp(velocidadeAtual, velocidadeAlvo, valorAceleracao);
+        Vector3 direcaoLerp = Vector3.Lerp(currentVelocity, velocidadeAlvo, valorAceleracao);
 
         // Movimenta o objeto
         // Se possui o componente de CharacterController, usa ele para o movimento, caso contrário usa o rigid body
-        if (isJogador)
+        if (isPlayer)
         {
             _characterController.Move(direcaoLerp * Time.deltaTime);
         } else
         {
             // Adiciona a força ao objeto, com base na aceleração do jogador; o multiplicadorAr é para que o jogador se movimente mais devagar no ar, e define como um ForceMode.Force para que seja aplicada constantemente
-            _rigidbody.AddForce(direcaoLerp.normalized * _velocidadeDesejada * 10f, ForceMode.Force);
+            _rigidbody.AddForce(direcaoLerp.normalized * _targetVelocity * 10f, ForceMode.Force);
         }
 
         // Atualiza a variável local para o valor mais recente da velocidade do objeto
-        velocidadeAtual = velocidadeAlvo;
+        currentVelocity = velocidadeAlvo;
+    }
+
+    /// <summary>
+    /// Checks if the player is grounded. Needs player height and layer Mask.
+    /// </summary>
+    /// <returns>True if grounded.</returns>
+    public bool Grounded()
+    {
+        return Physics.Raycast(gameObject.transform.position, Vector3.down, _height * 0.5f + 0.3f, _groundLayer);
     }
 }
