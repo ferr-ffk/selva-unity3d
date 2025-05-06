@@ -74,12 +74,17 @@ public class Player : MonoBehaviour
         // Move o Jogador
         _movementComponent.Move(gameObject, direction, cameraRotation);
 
-        // Launch player to target once triggered
-        if (_jumpReference.action.triggered)
+        // Launch player to target once triggered and check if it's grounded
+        if (_jumpReference.action.triggered && _movementComponent.Grounded())
         {
             _launchComponent.LaunchTo(_jumpTarget);
         }
 
         _launchComponent.DrawPath(_jumpTarget);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //Debug.Log(other);
     }
 }
