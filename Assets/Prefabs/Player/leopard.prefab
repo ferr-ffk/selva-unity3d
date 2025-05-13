@@ -479,6 +479,9 @@ PrefabInstance:
       addedObject: {fileID: 9114427577364956185}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a08019ae3ff54d14e90cda52534b70c5, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 8055342217270646212}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a08019ae3ff54d14e90cda52534b70c5, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 4147335303912733525}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a08019ae3ff54d14e90cda52534b70c5, type: 3}
       insertIndex: -1
@@ -557,6 +560,22 @@ MonoBehaviour:
   _camera: {fileID: 7203929248796926465}
   _armature: {fileID: 2234073572638674534}
   _jumpTarget: {x: 0, y: 0, z: 0}
+--- !u!114 &8055342217270646212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5435840681807419748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 719c937a2290be94ba32e5d6aaeeb75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 0
+  Died:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &4147335303912733525
 Rigidbody:
   m_ObjectHideFlags: 0
