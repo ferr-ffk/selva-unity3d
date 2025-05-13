@@ -107,14 +107,22 @@ public class Player : MonoBehaviour
             _jumpTargetId = other.GetInstanceID();
         }
     }
-        
-    private void OnTriggerExit(Collider other)
+
+    public void OnLaunchRangeCollider(Collider other)
     {
-        // Only if the enemy is the same that it was being tracked will it be removed
-        if (other.GetInstanceID() == _jumpTargetId)
+        // Check if the collided object is an enemy
+        if (other.TryGetComponent(out Enemy enemy))
         {
-            // Reset the jump target
-            _jumpTarget = Vector3.zero;
+            Debug.Log("Enemy detected: " + enemy.name);
+        }
+    }
+
+    public void OnAttackRangeColliderEnter(Collider other)
+    {
+        // Check if the collided object is an enemy
+        if (other.TryGetComponent(out Enemy enemy))
+        {
+            Debug.Log("Enemy in attack range: " + enemy.name);
         }
     }
 }
