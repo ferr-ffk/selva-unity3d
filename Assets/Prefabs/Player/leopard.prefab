@@ -416,7 +416,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a08019ae3ff54d14e90cda52534b70c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.21
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a08019ae3ff54d14e90cda52534b70c5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -424,7 +424,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a08019ae3ff54d14e90cda52534b70c5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -11.246
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a08019ae3ff54d14e90cda52534b70c5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -514,7 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33acc3f069547e14bbb9c0bbc7018002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpHeight: 5
+  _jumpHeight: 2
   _gravity: -9.81
   _debugPath: 1
   _debugPathColor: {r: 0, g: 1, b: 0, a: 1}

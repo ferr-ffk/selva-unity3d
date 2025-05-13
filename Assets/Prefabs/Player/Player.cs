@@ -42,7 +42,10 @@ public class Player : MonoBehaviour
     private GameObject _armature;
 
     [SerializeField, Tooltip("Reference to the target for jumping.")]
-    private Vector3 _jumpTarget;
+    private Vector3 _jumpTarget = Vector3.zero;
+
+    [Tooltip("ID of the jump target, used for debugging.")]
+    private int _jumpTargetId = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -74,17 +77,46 @@ public class Player : MonoBehaviour
         // Move o Jogador
         _movementComponent.Move(gameObject, direction, cameraRotation);
 
-        // Launch player to target once triggered and check if it's grounded
-        if (_jumpReference.action.triggered && _movementComponent.Grounded())
+        // If the jump target is null, skip the jumping logic
+        if (_jumpTarget != Vector3.zero)
         {
-            _launchComponent.LaunchTo(_jumpTarget);
-        }
+            // Automatically draw the debug path
+            _launchComponent.DrawPath(_jumpTarget);
 
-        _launchComponent.DrawPath(_jumpTarget);
+            // Launch player to target once triggered and check if it's grounded
+            if (_jumpReference.action.triggered && _movementComponent.Grounded())
+            {
+                _launchComponent.LaunchTo(_jumpTarget);
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(other);
+        Enemy enemy = null;
+
+        // Check if the collided object is an enemy
+        // Or if there is already a jump target
+        // The player will launch towards the enemy when it's nearby
+        if (other.TryGetComponent(out enemy) || _jumpTargetId != 0)
+        {
+            // Sets the jump target to the enemy's position
+            _jumpTarget = other.transform.position;
+            
+            // Sets the ID to make sure to remove only it later
+            _jumpTargetId = other.GetInstanceID();
+        }
+    }
+        
+    private void OnTriggerExit(Collider other)
+    {
+        Debug.Log(other.GetInstanceID() == _jumpTargetId);
+
+        // Only if the enemy is the same that it was being tracked will it be removed
+        if (other.GetInstanceID() == _jumpTargetId)
+        {
+            // Reset the jump target
+            _jumpTarget = Vector3.zero;
+        }
     }
 }
