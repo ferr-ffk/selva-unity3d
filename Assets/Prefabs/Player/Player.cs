@@ -110,8 +110,6 @@ public class Player : MonoBehaviour
         
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log(other.GetInstanceID() == _jumpTargetId);
-
         // Only if the enemy is the same that it was being tracked will it be removed
         if (other.GetInstanceID() == _jumpTargetId)
         {
