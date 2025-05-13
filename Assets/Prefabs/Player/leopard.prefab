@@ -514,7 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33acc3f069547e14bbb9c0bbc7018002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpHeight: 2
+  _jumpHeight: 1.25
   _gravity: -9.81
   _debugPath: 1
   _debugPathColor: {r: 0, g: 1, b: 0, a: 1}
