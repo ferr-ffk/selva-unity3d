@@ -59,7 +59,7 @@ public class HealthComponent : MonoBehaviour
     /// <summary>
     /// Returns the current health as a percentage of the max health. Useful for progress bar UI.
     /// </summary>
-    /// <returns>Health value out of 100%</returns>
+    /// <returns>Health percentage, between 0 and 1.</returns>
     public float GetHealthPorcentage()
     {
         if (_maxHealth <= 0)
