@@ -8,7 +8,7 @@ public class MovementComponent : MonoBehaviour
     [SerializeField, Tooltip("The maximum velocity the object can achieve.")]
     private float _targetVelocity;
 
-    [SerializeField, Tooltip("Acceleration for given object. Defaults to 1")]
+    [SerializeField, Tooltip("Acceleration for the given object. Defaults to 1")]
     private float _acceleration = 1.0f;
 
     [SerializeField, Tooltip("The layer mask belonging to the ground.")]
@@ -30,38 +30,39 @@ public class MovementComponent : MonoBehaviour
 
     private void Start()
     {
-        // Congela a rotação do objeto para que ele não caia rs
+        // Freezes the rotation of the object so it doesn't fall
         _rigidbody = GetComponent<Rigidbody>();
         if (_rigidbody == null)
         {
-            Debug.LogError("Rigidbody não encontrado!");
+            Debug.LogError("Rigidbody not found!");
             return;
-        } else
+        } 
+        else
         {
             _rigidbody.freezeRotation = true;
         }
 
-        // Pega o CharacterController do objeto, caso exista
+        // Gets the CharacterController component from the object, if it exists
         isPlayer = TryGetComponent<CharacterController>(out _characterController);
     }
 
     /// <summary>
-    /// Movimenta o objeto passado em uma direção dada.
+    /// Moves the given object in a specified direction.
     /// </summary>
-    /// <param name="objeto">O GameObject a ser movimentado</param>
-    /// <param name="direcao">O Vector3 representando a direção</param>
-    /// <param name="forward">O vetor representando a frente do movimento, útil caso o componente seja do jogador, e sua rotação muda constantemente por conta da câmera</param>
-    public void Move(GameObject objeto, Vector3 direcao, Quaternion forward = default)
+    /// <param name="objectToMove">The GameObject to be moved</param>
+    /// <param name="direction">The Vector3 representing the direction</param>
+    /// <param name="forward">The vector representing the forward direction of movement, useful if the component belongs to the player and its rotation changes constantly due to the camera</param>
+    public void Move(GameObject objectToMove, Vector3 direction, Quaternion forward = default)
     {
-        if (objeto == null)
+        if (objectToMove == null)
         {
-            Debug.LogError("Objeto não pode ser nulo!");
+            Debug.LogError("Object cannot be null!");
             return;
         }
 
-        if (direcao == Vector3.zero)
+        if (direction == Vector3.zero)
         {
-            // Reseta o tempo de andar
+            // Resets the walking time
             timeWalking = 0;
 
             currentVelocity = Vector3.zero;
@@ -69,38 +70,39 @@ public class MovementComponent : MonoBehaviour
             return;
         }
 
-        // Atualiza o tempo que o jogador está andando
+        // Updates the time the player has been walking
         timeWalking += Time.deltaTime;
 
-        // Transforma o vetor de movimento com base na direção dele (se esta existir), para que o movimento esteja sempre alinhado com a câmera
-        Vector3 direcaoMovimento = forward * direcao;
+        // Transforms the movement vector based on its direction (if it exists) to ensure the movement is always aligned with the camera
+        Vector3 movementDirection = forward * direction;
 
-        // Calcula a direção desejada de movimento
-        Vector3 velocidadeAlvo = direcaoMovimento * _targetVelocity;
+        // Calculates the desired movement velocity
+        Vector3 targetVelocity = movementDirection * _targetVelocity;
 
-        // Calcula o valor da aceleração para ser utilizada no Lerp
-        float valorAceleracao = 1 - Mathf.Exp(-_acceleration * Time.deltaTime);
+        // Calculates the acceleration value to be used in the Lerp
+        float accelerationValue = 1 - Mathf.Exp(-_acceleration * Time.deltaTime);
 
-        // Calcula o Lerp, que é basicamente uma forma de deixar mais suave o movimento com aceleração
-        Vector3 direcaoLerp = Vector3.Lerp(currentVelocity, velocidadeAlvo, valorAceleracao);
+        // Calculates the Lerp, which is essentially a way to smooth movement with acceleration
+        Vector3 lerpedDirection = Vector3.Lerp(currentVelocity, targetVelocity, accelerationValue);
 
-        // Movimenta o objeto
-        // Se possui o componente de CharacterController, usa ele para o movimento, caso contrário usa o rigid body
+        // Moves the object
+        // If it has the CharacterController component, use it for movement; otherwise, use the rigidbody
         if (isPlayer)
         {
-            _characterController.Move(direcaoLerp * Time.deltaTime);
-        } else
+            _characterController.Move(lerpedDirection * Time.deltaTime);
+        } 
+        else
         {
-            // Adiciona a força ao objeto, com base na aceleração do jogador; o multiplicadorAr é para que o jogador se movimente mais devagar no ar, e define como um ForceMode.Force para que seja aplicada constantemente
-            _rigidbody.AddForce(direcaoLerp.normalized * _targetVelocity * 10f, ForceMode.Force);
+            // Adds force to the object based on the player's acceleration; the airMultiplier makes the player move slower in the air and sets ForceMode.Force for consistent force application
+            _rigidbody.AddForce(lerpedDirection.normalized * _targetVelocity * 10f, ForceMode.Force);
         }
 
-        // Atualiza a variável local para o valor mais recente da velocidade do objeto
-        currentVelocity = velocidadeAlvo;
+        // Updates the local variable with the most recent velocity of the object
+        currentVelocity = targetVelocity;
     }
 
     /// <summary>
-    /// Checks if the player is grounded. Needs player height and layer Mask.
+    /// Checks if the player is grounded. Requires player height and layer mask.
     /// </summary>
     /// <returns>True if grounded.</returns>
     public bool Grounded()
