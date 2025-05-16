@@ -71,7 +71,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 9114427577364956185}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: OnLaunchRangeCollider
+        m_MethodName: OnLaunchRangeColliderEnter
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -86,7 +86,19 @@ MonoBehaviour:
       m_Calls: []
   _onCollisionExit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9114427577364956185}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnLauncheRangeColliderExit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3603577134837410723
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +249,19 @@ MonoBehaviour:
       m_Calls: []
   _onCollisionExit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9114427577364956185}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnAttackRangeColliderExit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7203929248796926465
 GameObject:
   m_ObjectHideFlags: 0

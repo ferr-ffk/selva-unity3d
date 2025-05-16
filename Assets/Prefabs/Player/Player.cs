@@ -91,29 +91,15 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Enemy enemy = null;
-
-        // Check if the collided object is an enemy
-        // Or if there is already a jump target
-        // The player will launch towards the enemy when it's nearby
-        if (other.TryGetComponent(out enemy) || _jumpTargetId != 0)
-        {
-            // Sets the jump target to the enemy's position
-            _jumpTarget = other.transform.position;
-            
-            // Sets the ID to make sure to remove only it later
-            _jumpTargetId = other.GetInstanceID();
-        }
-    }
-
-    public void OnLaunchRangeCollider(Collider other)
+    public void OnLaunchRangeColliderEnter(Collider other)
     {
         // Check if the collided object is an enemy
         if (other.TryGetComponent(out Enemy enemy))
         {
             Debug.Log("Enemy detected: " + enemy.name);
+
+            _jumpTarget = other.transform.position;
+            _jumpTargetId = other.GetInstanceID();
         }
     }
 
@@ -123,6 +109,30 @@ public class Player : MonoBehaviour
         if (other.TryGetComponent(out Enemy enemy))
         {
             Debug.Log("Enemy in attack range: " + enemy.name);
+
+            _jumpTarget = other.transform.position;
+            _jumpTargetId = other.GetInstanceID();
+        }
+    }
+
+    public void OnLauncheRangeColliderExit(Collider other)
+    {
+        // Check if the collided object is an enemy
+        if (other.TryGetComponent(out Enemy enemy) && _jumpTargetId == other.GetInstanceID())
+        {
+            Debug.Log("Enemy that entered has now exited launch range");
+
+            _jumpTarget = Vector3.zero;
+            _jumpTargetId = 0;
+        }
+    }
+
+    public void OnAttackRangeColliderExit(Collider other)
+    {
+        // Check if the collided object is an enemy
+        if (other.TryGetComponent(out Enemy enemy) && _jumpTargetId == other.GetInstanceID())
+        {
+            Debug.Log("Enemy that entered has now exited attack range");
         }
     }
 }
