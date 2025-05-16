@@ -2,6 +2,9 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// Controls the player character, handling movement, launching, and interactions with enemies.
+/// </summary>
 public class Player : MonoBehaviour
 {
     // Movement and Jump Components
@@ -47,12 +50,16 @@ public class Player : MonoBehaviour
     [Tooltip("ID of the jump target, used for debugging.")]
     private int _jumpTargetId = 0;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    /// <summary>
+    /// Called once before the first execution of Update after the MonoBehaviour is created.
+    /// </summary>
     void Start()
     {
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Called once per frame. Handles player movement, rotation, and launching logic.
+    /// </summary>
     void Update()
     {
         // Obtém o vetor 2D de direção a partir do input
@@ -91,6 +98,11 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Called when a collider enters the player's launch range.
+    /// Sets the jump target to the enemy's position if an enemy is detected.
+    /// </summary>
+    /// <param name="other">The collider that was entered.</param>
     public void OnLaunchRangeColliderEnter(Collider other)
     {
         // Check if the collided object is an enemy
@@ -103,6 +115,11 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Called when a collider enters the player's attack range.
+    /// Sets the jump target to the enemy's position if an enemy is detected.
+    /// </summary>
+    /// <param name="other">The collider that was entered.</param>
     public void OnAttackRangeColliderEnter(Collider other)
     {
         // Check if the collided object is an enemy
@@ -115,10 +132,15 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Called when a collider exits the player's launch range.
+    /// Resets the jump target if the exited collider matches the current target.
+    /// </summary>
+    /// <param name="other">The collider that was exited.</param>
     public void OnLauncheRangeColliderExit(Collider other)
     {
-        // Check if the collided object is an enemy
-        if (other.TryGetComponent(out Enemy enemy) && _jumpTargetId == other.GetInstanceID())
+        // Check if the exited object is the same as the current target
+        if (_jumpTargetId == other.GetInstanceID())
         {
             Debug.Log("Enemy that entered has now exited launch range");
 
@@ -127,10 +149,15 @@ public class Player : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Called when a collider exits the player's attack range.
+    /// Logs the exit if the exited collider matches the current target.
+    /// </summary>
+    /// <param name="other">The collider that was exited.</param>
     public void OnAttackRangeColliderExit(Collider other)
     {
-        // Check if the collided object is an enemy
-        if (other.TryGetComponent(out Enemy enemy) && _jumpTargetId == other.GetInstanceID())
+        // Check if the exited object is the same as the current target
+        if (_jumpTargetId == other.GetInstanceID())
         {
             Debug.Log("Enemy that entered has now exited attack range");
         }
