@@ -129,6 +129,10 @@ public class Player : MonoBehaviour
 
             _jumpTarget = other.transform.position;
             _jumpTargetId = other.GetInstanceID();
+
+            enemy.GetComponent<HealthComponent>().Damage(1f);
+
+            Debug.Log(enemy.GetComponent<HealthComponent>().GetHealthPorcentage());
         }
     }
 
