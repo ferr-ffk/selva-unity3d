@@ -4,6 +4,42 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
+/// <summary>
+///     Component for handling quick time events (QTEs) in Unity.
+///     <para>
+///         This component enables the creation and management of time-based input challenges, such as requiring the player
+///         to press a specific key within a time limit. It supports both single-action and continuous-action QTEs,
+///         triggering UnityEvents for success or failure.
+///     </para>
+/// </summary>
+/// <remarks>
+/// <para>
+///     Attach this component to a GameObject to define a quick time event for gameplay. Configure its parameters in the
+///     Inspector, including the required input action, event type, duration, and response events.
+/// </para>
+/// <para>
+///     The component supports two event types:
+///     <list type="bullet">
+///         <item>
+///             <term>Single</term>
+///             <description>The player must press the specified key once within the allotted time.</description>
+///         </item>
+///         <item>
+///             <term>Continuous</term>
+///             <description>The player must continuously or repeatedly press the specified key for the duration (not implemented).</description>
+///         </item>
+///     </list>
+/// </para>
+/// </remarks>
+/// <example>
+/// // Example usage in Unity:
+/// // 1. Attach QuickTimeEventComponent to a GameObject.
+/// // 2. Set the InputActionReference to the desired key or button.
+/// // 3. Configure EventDuration, EventType, and description.
+/// // 4. Assign UnityEvents for start, success, and failure responses.
+/// // 5. Call StartEvent() to initiate the QTE.
+/// </example>
+/// <seealso cref="UnityEvent"/>
 public class QuickTimeEventComponent : MonoBehaviour
 {
     /// <summary>
