@@ -908,13 +908,13 @@ MonoBehaviour:
       workTreeStatus: 3
     changedFilesText: 2 changed files
     lastCurrentBranchChangedEvent:
-      updatedTimeString: 2025-05-19T16:32:35.214-03:00
+      updatedTimeString: 0001-01-01T00:00:00.000+00:00
       cacheType: 1
     lastStatusEntriesChangedEvent:
-      updatedTimeString: 2025-05-19T16:34:43.316-03:00
+      updatedTimeString: 0001-01-01T00:00:00.000+00:00
       cacheType: 6
     lastLocksChangedEvent:
-      updatedTimeString: 2025-05-19T16:32:54.509-03:00
+      updatedTimeString: 0001-01-01T00:00:00.000+00:00
       cacheType: 7
   historyView:
     currentLogHasUpdate: 0
@@ -1922,7 +1922,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 79
+    y: 24
     width: 1055
     height: 565
   m_SerializedDataModeController:
@@ -2463,7 +2463,7 @@ MonoBehaviour:
       m_Fade:
         m_Target: 0
         speed: 2
-        m_Value: 1
+        m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -2473,11 +2473,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.14769927, y: -0.20317076, z: 0.031018047, w: 0.96744233}
     speed: 2
-    m_Value: {x: 0.14615513, y: -0.20611914, z: 0.03115186, w: 0.96704876}
+    m_Value: {x: -0.14769927, y: 0.20317078, z: -0.031018049, w: -0.96744233}
   m_Size:
     m_Target: 12.124355
     speed: 2
-    m_Value: 12.124608
+    m_Value: 12.124355
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -2679,8 +2679,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Hierarchy\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1056
-    y: 79
+    x: 1
+    y: 24
     width: 362
     height: 605
   m_SerializedDataModeController:
@@ -2745,8 +2745,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Project\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1056
-    y: 710
+    x: 1
+    y: 655
     width: 362
     height: 324
   m_SerializedDataModeController:
@@ -2789,7 +2789,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 72330000
     m_LastClickedID: 13170
-    m_ExpandedIDs: 0000000048b500004ab500004cb500004eb5000050b5000052b50000
+    m_ExpandedIDs: 0000000000b4000002b4000004b4000006b4000008b400000ab400000cb40000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2818,7 +2818,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 138}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff0000000048b500004ab500004cb500004eb5000050b5000052b5000018b60000
+    m_ExpandedIDs: 0000000000b4000002b4000004b4000006b4000008b400000ab400000cb40000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2897,8 +2897,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1420
-    y: 79
+    x: 1421
+    y: 24
     width: 499
     height: 955
   m_SerializedDataModeController:
@@ -2947,7 +2947,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 670
+    y: 615
     width: 1055
     height: 364
   m_SerializedDataModeController:
@@ -2977,7 +2977,7 @@ MonoBehaviour:
   m_UseMipMap: 0
   m_SimulatorState:
     controlPanelVisible: 0
-    controlPanelWidth: 0
+    controlPanelWidth: NaN
     controlPanelFoldoutKeys:
     - UnityEditor.AdaptivePerformance.Editor.AdaptivePerformanceUIExtension
     - UnityEditor.AdaptivePerformance.Google.Android.Editor.AdaptivePerformanceGoogleUIExtension
@@ -2996,7 +2996,7 @@ MonoBehaviour:
     - '{"m_SerializationStates":{"settingsFoldout":false,"vrrFoldout":false,"androidSystemFoldout":false}}'
     - '{}'
     - '{}'
-    scale: 28
+    scale: 10
     fitToScreenEnabled: 1
     rotationDegree: 270
     highlightSafeAreaEnabled: 0
