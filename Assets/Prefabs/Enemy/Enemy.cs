@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _healthPorcentage.text = (_healthComponent.GetHealthPorcentage() * 100).ToString() + "%";
+        _healthPorcentage.text = GetFormattedHealthPercentage();
     }
 
     // Update is called once per frame
@@ -22,6 +22,15 @@ public class Enemy : MonoBehaviour
 
     public void OnHealthChanged(float health)
     {
-        _healthPorcentage.text = (_healthComponent.GetHealthPorcentage() * 100).ToString() + "%";
+        _healthPorcentage.text = GetFormattedHealthPercentage();
+    }
+
+    /// <summary>
+    /// Returns the health percentage of the enemy's health as a string.
+    /// </summary>
+    /// <returns></returns>
+    private string GetFormattedHealthPercentage()
+    {
+        return (_healthComponent.GetHealthPorcentage() * 100).ToString() + "%";
     }
 }
