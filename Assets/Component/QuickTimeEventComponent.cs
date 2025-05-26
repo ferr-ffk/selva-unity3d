@@ -43,12 +43,18 @@ public class QuickTimeEventComponent : MonoBehaviour
     [SerializeField, Tooltip("The type of quick time event.")]
     private EventType _eventType;
 
+    [SerializeField, Tooltip("The threshold for the quick time event. Used only for Continuous type events.")]
+    private int _threshold = 0;
+
     [SerializeField, Tooltip("Event description to be displayed.")]
     private string _eventDescription = "";
 
     [Header("Event Responses")]
     [SerializeField, Tooltip("Action triggered on event start.")]
     private UnityEvent _eventStart = new();
+
+    [SerializeField, Tooltip("Action triggered when the event is triggered once. Only on Continuous type events.")]
+    private UnityEvent _eventTriggered = new();
 
     [SerializeField, Tooltip("Action triggered on event success.")]
     private UnityEvent _eventSuccess = new();
@@ -61,6 +67,9 @@ public class QuickTimeEventComponent : MonoBehaviour
 
     [SerializeField, Tooltip("Time remaining for the event in seconds.")]
     public float TimeRemaining { get; private set; } = 0;
+
+    [Tooltip("Current count of successful key presses for Continuous events.")]
+    private int _currentCount = 0;
 
     /// <summary>
     /// Coroutine instance for the countdown timer. Necessary for stopping it.
@@ -89,14 +98,32 @@ public class QuickTimeEventComponent : MonoBehaviour
         else if (_eventType == EventType.Continuous)
         {
             // Handle Continuous Type Event
-
+            // Check if the key is pressed the necessary number of times
             CheckContinuousEvent();
         }
     }
 
     private void CheckContinuousEvent()
     {
-        throw new NotImplementedException();
+        if (TimeRemaining > 0 && _inputActionReference.action.triggered)
+        {
+            _currentCount += 1;
+
+            _eventTriggered.Invoke();
+
+            // Check if the threshold is reached
+            if (_currentCount >= _threshold)
+            {
+                // Invokes success event
+                _eventSuccess?.Invoke();
+
+                // Interrupts the timer
+                StopCoroutine(countDownInstance);
+
+                // Resets the time remaining
+                Running = false;
+            }
+        }
     }
 
     private void CheckSingleEvent()
@@ -127,6 +154,8 @@ public class QuickTimeEventComponent : MonoBehaviour
 
         // Invokes event start
         _eventStart?.Invoke();
+
+        _currentCount = 0;
 
         // Sets the time remaining
         TimeRemaining = EventDuration;
