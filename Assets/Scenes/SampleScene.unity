@@ -875,13 +875,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 32298459847920786, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
+      propertyPath: m_Radius
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 32298459847920786, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4621868458778280926, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.21
       objectReference: {fileID: 0}
     - target: {fileID: 4621868458778280926, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.309
       objectReference: {fileID: 0}
     - target: {fileID: 4621868458778280926, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
       propertyPath: m_LocalPosition.z
@@ -918,6 +926,22 @@ PrefabInstance:
     - target: {fileID: 5435840681807419748, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
       propertyPath: m_Name
       value: leopard
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583726975655605171, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
+      propertyPath: m_Size.y
+      value: 0.83259207
+      objectReference: {fileID: 0}
+    - target: {fileID: 6583726975655605171, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
+      propertyPath: m_Center.y
+      value: -0.1967729
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943254503743286758, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
+      propertyPath: m_Radius
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6943254503743286758, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
+      propertyPath: m_Center.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

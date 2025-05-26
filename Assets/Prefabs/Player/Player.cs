@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class Player : MonoBehaviour
 {
+
     // Movement and Jump Components
     [Header("Movement and Jump Components")]
     [Tooltip("Component responsible for player movement.")]
@@ -50,11 +51,21 @@ public class Player : MonoBehaviour
     [Tooltip("ID of the jump target, used for debugging.")]
     private int _jumpTargetId = 0;
 
+    [Tooltip("ID of the attack target, used for debugging.")]
+    private int _attackTargetId = 0;
+
+    [Header("Player Settings")]
+    [SerializeField, Tooltip("Factor for slowing down time. Defaults to 0.25f.")]
+    private float _slowDownFactor = 0.25f;
+
+    private float adjustedFixedDeltaTime;
+
     /// <summary>
     /// Called once before the first execution of Update after the MonoBehaviour is created.
     /// </summary>
     void Start()
     {
+        adjustedFixedDeltaTime = Time.fixedDeltaTime * _slowDownFactor;
     }
 
     /// <summary>
@@ -106,7 +117,8 @@ public class Player : MonoBehaviour
     public void OnLaunchRangeColliderEnter(Collider other)
     {
         // Check if the collided object is an enemy
-        if (other.TryGetComponent(out Enemy enemy))
+        // And if doesn't already have a target
+        if (other.TryGetComponent(out Enemy enemy) && _jumpTargetId != other.GetInstanceID() && _jumpTargetId == 0)
         {
             Debug.Log("Enemy detected: " + enemy.name);
 
@@ -122,17 +134,20 @@ public class Player : MonoBehaviour
     /// <param name="other">The collider that was entered.</param>
     public void OnAttackRangeColliderEnter(Collider other)
     {
-        // Check if the collided object is an enemy
-        if (other.TryGetComponent(out Enemy enemy))
+        int objId = other.GetInstanceID();
+
+        // Check if the collided object is an enemy 
+        // If doesn't already have an attack target
+        // And if it's the launch target too
+        if (other.TryGetComponent(out Enemy enemy) && _attackTargetId == 0 && _jumpTargetId == objId)
         {
             Debug.Log("Enemy in attack range: " + enemy.name);
 
             _jumpTarget = other.transform.position;
-            _jumpTargetId = other.GetInstanceID();
+            _attackTargetId = objId;
 
             enemy.GetComponent<HealthComponent>().Damage(1f);
-
-            Debug.Log(enemy.GetComponent<HealthComponent>().GetHealthPorcentage());
+            SlowDownTime();
         }
     }
 
@@ -150,6 +165,8 @@ public class Player : MonoBehaviour
 
             _jumpTarget = Vector3.zero;
             _jumpTargetId = 0;
+
+            RevertSlowDownTime();
         }
     }
 
@@ -164,6 +181,22 @@ public class Player : MonoBehaviour
         if (_jumpTargetId == other.GetInstanceID())
         {
             Debug.Log("Enemy that entered has now exited attack range");
+
+            _attackTargetId = 0;
+
+            RevertSlowDownTime();
         }
+    }
+        
+    private void SlowDownTime()
+    {
+        Time.timeScale = _slowDownFactor;
+        Time.fixedDeltaTime = adjustedFixedDeltaTime;
+    }
+
+    private void RevertSlowDownTime()
+    {
+        Time.timeScale = 1;
+        Time.fixedDeltaTime = 0.02f;
     }
 }
