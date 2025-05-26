@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class QuickTimeEventHandler : MonoBehaviour
+public class SingleQuickTimeEventHandler : MonoBehaviour
 {
     public QuickTimeEventComponent quickTimeEventComponent;
 
