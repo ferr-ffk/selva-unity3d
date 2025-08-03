@@ -155,6 +155,31 @@ public class Player : MonoBehaviour
         }
 
         _attackTarget.GetComponent<HealthComponent>().Damage(1f);
+
+        _attackTarget.GetComponent<HealthComponent>().Died.AddListener(OnTargetDeath);
+    }
+
+    /// <summary>
+    /// Resets the jump and attack targets when the target enemy dies.
+    /// </summary>
+    private void OnTargetDeath()
+    {
+        Debug.Log("Target enemy has died. Resetting UI and tracking variables.");
+        ResetTarget();
+
+        RevertSlowDownTime();
+
+        _launchButtonReference.SetActive(false);
+        _attackButtonReference.SetActive(false);
+    }
+
+    private void ResetTarget()
+    {
+        _jumpTarget = Vector3.zero;
+        _jumpTargetId = 0;
+
+        _attackTarget = null;
+        _attackTargetId = 0;
     }
 
     /// <summary>

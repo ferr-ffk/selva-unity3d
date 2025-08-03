@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
@@ -12,12 +13,21 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         _healthPorcentage.text = GetFormattedHealthPercentage();
+        _healthComponent.Died.AddListener(OnDied);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    private void OnDied()
+    {
+        _healthPorcentage.text = "0%";
+        
+        Destroy(gameObject); // Destroy the enemy immediatly
+        Destroy(this, 3f); // Destroy the script after 3 seconds
     }
 
     public void OnHealthChanged(float health)
