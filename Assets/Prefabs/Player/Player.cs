@@ -35,6 +35,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     private InputActionReference _jumpReference;
 
+    [Tooltip("Input action for attacking.")]
+    [SerializeField]
+    private InputActionReference _attackReference;
+
     // Scene Object References
     [Header("Scene Object References")]
     [Tooltip("Reference to the player's camera.")]
@@ -48,6 +52,9 @@ public class Player : MonoBehaviour
     [SerializeField, Tooltip("Reference to the target for jumping.")]
     private Vector3 _jumpTarget = Vector3.zero;
 
+    [SerializeField, Tooltip("Reference to the target for attacking.")]
+    private GameObject _attackTarget;
+
     [Tooltip("ID of the jump target, used for debugging.")]
     private int _jumpTargetId = 0;
 
@@ -58,6 +65,12 @@ public class Player : MonoBehaviour
     [SerializeField, Tooltip("Factor for slowing down time. Defaults to 0.25f.")]
     private float _slowDownFactor = 0.25f;
 
+    [SerializeField, Tooltip("Reference to the launch button in the UI.")]
+    private GameObject _launchButtonReference;
+
+    [SerializeField, Tooltip("Reference to the attack button in the UI.")]
+    private GameObject _attackButtonReference;
+
     private float adjustedFixedDeltaTime;
 
     /// <summary>
@@ -66,6 +79,13 @@ public class Player : MonoBehaviour
     void Start()
     {
         adjustedFixedDeltaTime = Time.fixedDeltaTime * _slowDownFactor;
+
+        // Disable UI buttons, so that they are enabled on attack/launch range enter
+        _launchButtonReference.SetActive(false);
+        _attackButtonReference.SetActive(false);
+
+        _attackReference.action.performed += ctx => AttackTarget();
+        _jumpReference.action.performed += ctx => LaunchToTarget();
     }
 
     /// <summary>
@@ -104,9 +124,37 @@ public class Player : MonoBehaviour
             // Launch player to target once triggered and check if it's grounded
             if (_jumpReference.action.triggered && _movementComponent.Grounded())
             {
-                _launchComponent.LaunchTo(_jumpTarget);
+                LaunchToTarget();
             }
         }
+    }
+
+    /// <summary>
+    /// Launches the player towards the current jump target position.
+    /// </summary>
+    public void LaunchToTarget()
+    {
+        if (_jumpTarget == Vector3.zero)
+        {
+            Debug.LogWarning("Jump target is not set. Cannot launch.");
+            return;
+        }
+
+        _launchComponent.LaunchTo(_jumpTarget);
+    }
+
+    /// <summary>
+    /// Attacks the target enemy if within range.
+    /// </summary>
+    public void AttackTarget()
+    {
+        if (_attackTarget == null)
+        {
+            Debug.LogWarning("Attack target is not set. Cannot attack.");
+            return;
+        }
+
+        _attackTarget.GetComponent<HealthComponent>().Damage(1f);
     }
 
     /// <summary>
@@ -124,6 +172,8 @@ public class Player : MonoBehaviour
 
             _jumpTarget = other.transform.position;
             _jumpTargetId = other.GetInstanceID();
+
+            _launchButtonReference.SetActive(true);
         }
     }
 
@@ -146,7 +196,10 @@ public class Player : MonoBehaviour
             _jumpTarget = other.transform.position;
             _attackTargetId = objId;
 
-            enemy.GetComponent<HealthComponent>().Damage(1f);
+            _attackButtonReference.SetActive(true);
+
+            _attackTarget = enemy.gameObject;
+
             SlowDownTime();
         }
     }
@@ -166,6 +219,8 @@ public class Player : MonoBehaviour
             _jumpTarget = Vector3.zero;
             _jumpTargetId = 0;
 
+            _launchButtonReference.SetActive(false);
+
             RevertSlowDownTime();
         }
     }
@@ -183,6 +238,10 @@ public class Player : MonoBehaviour
             Debug.Log("Enemy that entered has now exited attack range");
 
             _attackTargetId = 0;
+
+            _attackTarget = null;
+
+            _attackButtonReference.SetActive(false);
 
             RevertSlowDownTime();
         }
