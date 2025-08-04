@@ -235,4 +235,19 @@ public class QuickTimeEventComponent : MonoBehaviour
 
         return _currentCount + 1;
     }
+
+    public int GetThreshold()
+    {
+        if (_eventType != EventType.Continuous)
+        {
+            throw new NotSupportedException("GetThreshold is only applicable for Continuous events.");
+        }
+
+        return _threshold;
+    }
+
+    private void OnDestroy()
+    {
+        _eventTriggered.RemoveAllListeners();
+    }
 }
