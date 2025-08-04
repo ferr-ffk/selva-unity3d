@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem;
 
 /// <summary>
 ///     Component for handling quick time events (QTEs) in Unity.
@@ -64,7 +64,7 @@ public class QuickTimeEventComponent : MonoBehaviour
         /// </summary>
         Single,
         /// <summary>
-        /// Represents a quick time event that requires continuous or repeated key presses over a duration.
+        /// Represents a quick time event that requires continuous or repeated key presses until a certain threshold is met.
         /// </summary>
         Continuous,
     }
@@ -72,9 +72,6 @@ public class QuickTimeEventComponent : MonoBehaviour
     [Header("Quick Time Event Settings")]
     [SerializeField, Tooltip("The duration of the quick time event in seconds.")]
     public float EventDuration = 0;
-
-    [SerializeField, Tooltip("The key to be pressed during the quick time event.")]
-    private InputActionReference _inputActionReference;
 
     [SerializeField, Tooltip("The type of quick time event.")]
     private EventType _eventType;
@@ -112,40 +109,71 @@ public class QuickTimeEventComponent : MonoBehaviour
     /// </summary>
     private IEnumerator countDownInstance;
 
-    private void Start()
-    {
-        // Sets the time remaining to the event duration
-        TimeRemaining = EventDuration;
-    }
-
     private void Update()
     {
         if (!Running)
             return;
 
         TimeRemaining = Mathf.Max(TimeRemaining - Time.deltaTime, 0);
+    }
+
+    public void StartEvent()
+    {
+        if (Running)
+        {
+            Debug.LogWarning($"Event '{_eventDescription}' already running.");
+
+            // Resets timer, if it was running
+            StopCoroutine(countDownInstance);
+        }
+
+        // Invokes event start
+        _eventStart?.Invoke();
+
+        _eventTriggered.RemoveAllListeners();
+        _currentCount = 0;
+
+        // Sets the time remaining
+        TimeRemaining = EventDuration;
+
+        // Starts timer with duration of EventDuration
+        // Sets member instance value so that can be stopped later
+        countDownInstance = StartCountDown();
+
+        StartCoroutine(countDownInstance);
 
         if (_eventType == EventType.Single)
         {
-            // Handle Single Type Event
-            // Check if the key is pressed during the time frame
-            CheckSingleEvent();
-        }
-        else if (_eventType == EventType.Continuous)
+            _eventTriggered.AddListener(OnSingleEventTriggered);
+        } else if (_eventType == EventType.Continuous)
         {
-            // Handle Continuous Type Event
-            // Check if the key is pressed the necessary number of times
-            CheckContinuousEvent();
+            _eventTriggered.AddListener(OnContinuousEventTriggered);
+        }
+
+        // Sets the event as running
+        Running = true;
+    }
+
+    private void OnSingleEventTriggered()
+    {
+        if (Running && TimeRemaining > 0)
+        {
+            // Invokes event success
+            _eventSuccess?.Invoke();
+
+            // Stops the countdown
+            StopCoroutine(countDownInstance);
+
+            // Sets the event as not running
+            Running = false;
         }
     }
 
-    private void CheckContinuousEvent()
+    private void OnContinuousEventTriggered()
     {
-        if (TimeRemaining > 0 && _inputActionReference.action.triggered)
+        if (Running && TimeRemaining > 0)
         {
-            _currentCount += 1;
-
-            _eventTriggered.Invoke();
+            _currentCount++;
 
             // Check if the threshold is reached
             if (_currentCount >= _threshold)
@@ -162,48 +190,13 @@ public class QuickTimeEventComponent : MonoBehaviour
         }
     }
 
-    private void CheckSingleEvent()
+    /// <summary>
+    /// Triggers the quick time event, indicating that the player has successfully completed the required action, if it is a single event; or indicates
+    /// that the player triggered once an action, if it is a continuous event.
+    /// </summary>
+    public void Trigger()
     {
-        // Check if the key is pressed during the time frame
-        if (TimeRemaining > 0 && _inputActionReference.action.triggered)
-        {
-            // Invokes sucess event
-            _eventSuccess?.Invoke();
-
-            // Interrupts the timer
-            StopCoroutine(countDownInstance);
-
-            // Resets the time remaining
-            Running = false;
-        }
-    }
-
-    public void StartEvent()
-    {
-        if (Running)
-        {
-            Debug.LogWarning($"Event '{_eventDescription}' already running.");
-
-            // Resets timer, if it was running
-            StopCoroutine(countDownInstance);
-        }
-
-        // Invokes event start
-        _eventStart?.Invoke();
-
-        _currentCount = 0;
-
-        // Sets the time remaining
-        TimeRemaining = EventDuration;
-
-        // Starts timer with duration of EventDuration
-        // Sets member instance value so that can be stopped later
-        countDownInstance = StartCountDown();
-
-        StartCoroutine(countDownInstance);
-
-        // Sets the event as running
-        Running = true;
+        _eventTriggered?.Invoke();
     }
 
     private IEnumerator StartCountDown()
@@ -218,10 +211,28 @@ public class QuickTimeEventComponent : MonoBehaviour
         StopCoroutine(countDownInstance);
         _eventFailure.Invoke();
         Running = false;
+
+        // Remove the event triggered listener
+        _eventTriggered.RemoveAllListeners();
     }
 
     public string GetEventDescription()
     {
         return _eventDescription;
+    }
+
+    /// <summary>
+    /// Gets the current count of successful key presses for Continuous events. If the event type is not 'Continuous', throws a <see cref="NotSupportedException"/>.
+    /// </summary>
+    /// <returns>The current count</returns>
+    /// <exception cref="NotSupportedException"></exception>
+    public int GetCurrentCount()
+    {
+        if (_eventType != EventType.Continuous)
+        {
+            throw new NotSupportedException("GetCurrentCount is only applicable for Continuous events.");
+        }
+
+        return _currentCount + 1;
     }
 }
