@@ -119,6 +119,85 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &133115449
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 133115450}
+  - component: {fileID: 133115452}
+  - component: {fileID: 133115451}
+  m_Layer: 5
+  m_Name: QTEText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &133115450
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133115449}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 353642328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1.9162, y: -444}
+  m_SizeDelta: {x: 706.5995, y: 159.8849}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &133115451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133115449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 70
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 70
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: quick-time-event
+--- !u!222 &133115452
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133115449}
+  m_CullTransparentMesh: 1
 --- !u!1 &195789089
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,6 +567,7 @@ RectTransform:
   - {fileID: 856964052}
   - {fileID: 2020295245}
   - {fileID: 195789090}
+  - {fileID: 133115450}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -630,7 +710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8390343063295922429, guid: 350a03dbe350b7346a33de5e32dc9a0f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.13
+      value: -10.5
       objectReference: {fileID: 0}
     - target: {fileID: 8390343063295922429, guid: 350a03dbe350b7346a33de5e32dc9a0f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -766,7 +846,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8390343063295922429, guid: 350a03dbe350b7346a33de5e32dc9a0f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.04
+      value: 3.16
       objectReference: {fileID: 0}
     - target: {fileID: 8390343063295922429, guid: 350a03dbe350b7346a33de5e32dc9a0f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1031,6 +1111,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 856964051}
   m_CullTransparentMesh: 1
+--- !u!1 &927148514 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5435840681807419748, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
+  m_PrefabInstance: {fileID: 1823166538785553743}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &927148523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927148514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d3ebdd167df18f4d83bcb1a946496b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventDuration: 10
+  _eventType: 1
+  _threshold: 5
+  _eventDescription: Attack! (T = 5)
+  _eventStart:
+    m_PersistentCalls:
+      m_Calls: []
+  _eventTriggered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1823166538785553744}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnAttackEventTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  _eventSuccess:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1823166538785553744}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnAttackEventSuccess
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  _eventFailure:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1823166538785553744}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: OnAttackEventFailure
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!1 &1408283600
 GameObject:
   m_ObjectHideFlags: 0
@@ -1497,7 +1646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8729171707284848771, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
       propertyPath: m_ControllerManager.Controllers.Array.data[1].Input.Gain
-      value: -200
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8729171707284848771, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
       propertyPath: m_ControllerManager.Controllers.Array.data[0].Input.InputAction
@@ -1511,6 +1660,14 @@ PrefabInstance:
       propertyPath: m_ControllerManager.Controllers.Array.data[2].Input.InputAction
       value: 
       objectReference: {fileID: 6240969308177333660, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    - target: {fileID: 9114427577364956185, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
+      propertyPath: _qteText
+      value: 
+      objectReference: {fileID: 133115451}
+    - target: {fileID: 9114427577364956185, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
+      propertyPath: _qteComponent
+      value: 
+      objectReference: {fileID: 927148523}
     - target: {fileID: 9114427577364956185, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
       propertyPath: _attackReference
       value: 
@@ -1526,8 +1683,22 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5435840681807419748, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 927148523}
   m_SourcePrefab: {fileID: 100100000, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
+--- !u!114 &1823166538785553744 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9114427577364956185, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
+  m_PrefabInstance: {fileID: 1823166538785553743}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927148514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ce51be860a79141907a56a387f1464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4373273931039495063
 PrefabInstance:
   m_ObjectHideFlags: 0

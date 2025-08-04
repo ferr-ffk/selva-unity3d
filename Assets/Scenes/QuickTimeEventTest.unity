@@ -821,7 +821,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EventDuration: 10
-  _inputActionReference: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _eventType: 0
   _threshold: 0
   _eventDescription: "rapido aperta espa\xE7o"
@@ -842,7 +841,19 @@ MonoBehaviour:
         m_CallState: 1
   _eventTriggered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1607553990}
+        m_TargetAssemblyTypeName: SingleQuickTimeEventHandler, Assembly-CSharp
+        m_MethodName: OnEventTriggered
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _eventSuccess:
     m_PersistentCalls:
       m_Calls:
@@ -904,6 +915,7 @@ MonoBehaviour:
   textMesh: {fileID: 1075917790}
   description: {fileID: 1278142632}
   eventStart: {fileID: 7040659881675835329, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  eventTrigger: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!1 &1610807774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,7 +1184,6 @@ GameObject:
   - component: {fileID: 1875859229}
   - component: {fileID: 1875859228}
   - component: {fileID: 1875859227}
-  - component: {fileID: 1875859230}
   m_Layer: 0
   m_Name: ContinuousQuickTimeEventHandler
   m_TagString: Untagged
@@ -1193,14 +1204,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EventDuration: 10
-  _inputActionReference: {fileID: 2411907206095950430, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _eventType: 1
-  _threshold: 10
-  _eventDescription: rapido aperta '1' 10 vezes
+  _threshold: 5
+  _eventDescription: "rapido aperta espa\xE7o 5 vezes"
   _eventStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1875859230}
+      - m_Target: {fileID: 1875859228}
         m_TargetAssemblyTypeName: ContinuousQuickTimeEventHandler, Assembly-CSharp
         m_MethodName: OnEventStart
         m_Mode: 1
@@ -1211,11 +1221,11 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   _eventTriggered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1875859230}
+      - m_Target: {fileID: 1875859228}
         m_TargetAssemblyTypeName: ContinuousQuickTimeEventHandler, Assembly-CSharp
         m_MethodName: OnEventTriggered
         m_Mode: 1
@@ -1230,7 +1240,7 @@ MonoBehaviour:
   _eventSuccess:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1875859230}
+      - m_Target: {fileID: 1875859228}
         m_TargetAssemblyTypeName: ContinuousQuickTimeEventHandler, Assembly-CSharp
         m_MethodName: OnEventSuccess
         m_Mode: 1
@@ -1245,7 +1255,7 @@ MonoBehaviour:
   _eventFailure:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1875859230}
+      - m_Target: {fileID: 1875859228}
         m_TargetAssemblyTypeName: ContinuousQuickTimeEventHandler, Assembly-CSharp
         m_MethodName: OnEventFailure
         m_Mode: 1
@@ -1266,13 +1276,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1875859225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a32bbe3bd6d682e41931cc1a28549b01, type: 3}
+  m_Script: {fileID: 11500000, guid: f469625d60ee7d34bba9af9284598183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   quickTimeEventComponent: {fileID: 1875859227}
   textMesh: {fileID: 2066519929}
   description: {fileID: 1610807776}
-  eventStart: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  eventStart: {fileID: 3001919216989983466, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  eventTrigger: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!4 &1875859229
 Transform:
   m_ObjectHideFlags: 0
@@ -1288,22 +1299,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1875859230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1875859225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f469625d60ee7d34bba9af9284598183, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  quickTimeEventComponent: {fileID: 1875859227}
-  textMesh: {fileID: 2066519929}
-  description: {fileID: 1610807776}
-  eventStart: {fileID: 3001919216989983466, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!1 &2066519927
 GameObject:
   m_ObjectHideFlags: 0

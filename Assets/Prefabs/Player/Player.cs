@@ -1,6 +1,8 @@
+using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 /// <summary>
 /// Controls the player character, handling movement, launching, and interactions with enemies.
@@ -65,6 +67,7 @@ public class Player : MonoBehaviour
     [SerializeField, Tooltip("Factor for slowing down time. Defaults to 0.25f.")]
     private float _slowDownFactor = 0.25f;
 
+    [Header("Quick Time Event Settings")]
     [SerializeField, Tooltip("Reference to the launch button in the UI.")]
     private GameObject _launchButtonReference;
 
@@ -72,6 +75,12 @@ public class Player : MonoBehaviour
     private GameObject _attackButtonReference;
 
     private float adjustedFixedDeltaTime;
+
+    [SerializeField, Tooltip("The QTE event component.")]
+    private QuickTimeEventComponent _qteComponent;
+
+    [SerializeField, Tooltip("TextMeshPro component for displaying QTE instructions.")]
+    private Text _qteText;
 
     /// <summary>
     /// Called once before the first execution of Update after the MonoBehaviour is created.
@@ -84,8 +93,13 @@ public class Player : MonoBehaviour
         _launchButtonReference.SetActive(false);
         _attackButtonReference.SetActive(false);
 
-        _attackReference.action.performed += ctx => AttackTarget();
+        _attackReference.action.performed += ctx => _qteComponent.Trigger();
         _jumpReference.action.performed += ctx => LaunchToTarget();
+
+        if (_qteComponent == null)
+        {
+            Debug.LogWarning("QuickTimeEventComponent is not assigned. QTE functionality will not work.");
+        }
     }
 
     /// <summary>
@@ -127,6 +141,18 @@ public class Player : MonoBehaviour
                 LaunchToTarget();
             }
         }
+
+        // Checks QTE
+        if (_qteComponent.Running)
+        {
+            // If the QTE is running, check if the attack button was pressed
+            _qteText.text = "QTE Triggered! Press 'Attack' again to succeed!";
+        }
+        else
+        {
+            // If the QTE is not running, reset the text
+            _qteText.text = "";
+        }
     }
 
     /// <summary>
@@ -153,22 +179,41 @@ public class Player : MonoBehaviour
             Debug.LogWarning("Attack target is not set. Cannot attack.");
             return;
         }
-
-        _attackTarget.GetComponent<HealthComponent>().Damage(1f);
-
-        _attackTarget.GetComponent<HealthComponent>().Died.AddListener(OnTargetDeath);
     }
 
     /// <summary>
-    /// Resets the jump and attack targets when the target enemy dies.
+    /// Triggered when the attack button is pressed in the UI. Debugs the action and prepares for the quick time event (QTE).
     /// </summary>
-    private void OnTargetDeath()
+    public void OnAttackEventTrigger()
     {
+        Debug.LogFormat("Attack button pressed! Current count: {0}, Threshold: {1}", _qteComponent.GetCurrentCount(), _qteComponent.GetThreshold());
+    }
+
+    /// <summary>
+    /// Kills the target specified, runs on quick time event success.
+    /// </summary>
+    public void OnAttackEventSuccess()
+    {
+        _attackTarget.GetComponent<HealthComponent>().Damage(100000f);
+
         Debug.Log("Target enemy has died. Resetting UI and tracking variables.");
         ResetTarget();
 
         RevertSlowDownTime();
 
+        _launchButtonReference.SetActive(false);
+        _attackButtonReference.SetActive(false);
+    }
+
+    public void OnAttackEventFailure()
+    {
+        // Damages the player
+        Debug.Log("Damaging the player: -10 HP");
+
+        Debug.Log("Attack event failed. Resetting UI and tracking variables.");
+
+        ResetTarget();
+        RevertSlowDownTime();
         _launchButtonReference.SetActive(false);
         _attackButtonReference.SetActive(false);
     }
@@ -218,14 +263,19 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Enemy in attack range: " + enemy.name);
 
+            // Config tracking target
             _jumpTarget = other.transform.position;
             _attackTargetId = objId;
-
-            _attackButtonReference.SetActive(true);
-
             _attackTarget = enemy.gameObject;
 
+            // Enable attack button in UI
+            _attackButtonReference.SetActive(true);
+
+            // Slow down time for the QTE
             SlowDownTime();
+
+            _qteComponent.StartEvent();
+            _qteText.text = "Press 'Attack' to defeat the enemy!";
         }
     }
 
@@ -282,5 +332,12 @@ public class Player : MonoBehaviour
     {
         Time.timeScale = 1;
         Time.fixedDeltaTime = 0.02f;
+    }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe from input actions
+        _attackReference.action.performed -= ctx => _qteComponent.Trigger();
+        _jumpReference.action.performed -= ctx => LaunchToTarget();
     }
 }
