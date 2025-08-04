@@ -13,6 +13,8 @@ public class ContinuousQuickTimeEventHandler : MonoBehaviour
 
     public InputActionReference eventStart;
 
+    public InputActionReference eventTrigger;
+
     private void Start()
     {
         textMesh.text = quickTimeEventComponent.TimeRemaining.ToString();
@@ -25,6 +27,11 @@ public class ContinuousQuickTimeEventHandler : MonoBehaviour
         if (eventStart.action.triggered)
         {
             quickTimeEventComponent.StartEvent();
+        }
+
+        if (eventTrigger.action.triggered)
+        {
+            quickTimeEventComponent.Trigger();
         }
 
         textMesh.text = quickTimeEventComponent.TimeRemaining.ToString();
@@ -41,7 +48,7 @@ public class ContinuousQuickTimeEventHandler : MonoBehaviour
 
     public void OnEventTriggered()
     {
-        Debug.Log("Event triggered");
+        Debug.Log("Event triggered. Current Count: " + quickTimeEventComponent.GetCurrentCount());
         description.text = "evento em andamento...";
     }
 

@@ -13,6 +13,8 @@ public class SingleQuickTimeEventHandler : MonoBehaviour
 
     public InputActionReference eventStart;
 
+    public InputActionReference eventTrigger;
+
     private void Start()
     {
         textMesh.text = quickTimeEventComponent.TimeRemaining.ToString();
@@ -27,6 +29,11 @@ public class SingleQuickTimeEventHandler : MonoBehaviour
             quickTimeEventComponent.StartEvent();
         }
 
+        if (eventTrigger.action.triggered)
+        {
+            quickTimeEventComponent.Trigger();
+        }
+
         textMesh.text = quickTimeEventComponent.TimeRemaining.ToString();
     }
 
@@ -37,6 +44,11 @@ public class SingleQuickTimeEventHandler : MonoBehaviour
         textMesh.text = quickTimeEventComponent.TimeRemaining.ToString();
 
         description.text = quickTimeEventComponent.GetEventDescription();
+    }
+
+    public void OnEventTriggered()
+    {
+        Debug.Log("Event Triggered");
     }
 
     public void OnEventSuccess()
