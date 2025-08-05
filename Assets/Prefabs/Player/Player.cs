@@ -80,6 +80,8 @@ public class Player : MonoBehaviour
     [SerializeField, Tooltip("TextMeshPro component for displaying QTE instructions.")]
     private Text _qteText;
 
+    private bool _lockMovement = false;
+
     /// <summary>
     /// Called once before the first execution of Update after the MonoBehaviour is created.
     /// </summary>
@@ -108,13 +110,9 @@ public class Player : MonoBehaviour
     void Update()
     {
         // Handle player movement and rotation
-        HandleMovement();
-
-        // Checks QTE
-        if (_qteComponent.Running)
+        if (!_lockMovement)
         {
-            // If the QTE is running, check if the attack button was pressed
-            _qteText.text = "QTE Triggered! Press 'Attack' again to succeed!";
+            HandleMovement();
         }
     }
 
@@ -148,6 +146,8 @@ public class Player : MonoBehaviour
 
         Debug.Log("Target enemy has died. Resetting UI and tracking variables.");
 
+        _lockMovement = false;
+
         ResetTarget();
         RevertSlowDownTime();
         _uiButtons.HideUI();
@@ -159,6 +159,8 @@ public class Player : MonoBehaviour
         Debug.Log("Damaging the player: -10 HP");
 
         Debug.Log("Attack event failed. Resetting UI and tracking variables.");
+
+        _lockMovement = false;
 
         ResetTarget();
         RevertSlowDownTime();
@@ -257,6 +259,9 @@ public class Player : MonoBehaviour
         if (other.TryGetComponent(out Enemy enemy) && _attackTargetId == 0 && _jumpTargetId == objId)
         {
             Debug.Log("Enemy in attack range: " + enemy.name);
+
+            // Lock movement to prevent player from moving while in QTE
+            _lockMovement = true;
 
             // Config tracking target
             _jumpTarget = other.transform.position;
