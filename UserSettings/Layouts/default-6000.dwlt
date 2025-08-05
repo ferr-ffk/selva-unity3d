@@ -904,13 +904,13 @@ MonoBehaviour:
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
-  m_2DMode: 0
+  m_2DMode: 1
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 12.072049, y: 7.554195, z: -23.079784}
+    m_Target: {x: 756.5837, y: 518.63776, z: -1.276998}
     speed: 2
     m_Value: {x: 12.072049, y: 7.554195, z: -23.079784}
   m_RenderMode: 0
@@ -958,15 +958,15 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.15102416, y: -0.37237325, z: 0.061541278, w: 0.9136696}
+    m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
     m_Value: {x: -0.15102416, y: 0.37237322, z: -0.061541278, w: -0.9136696}
   m_Size:
-    m_Target: 0.8660254
+    m_Target: 823.2512
     speed: 2
     m_Value: 0.8660254
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
     m_Value: 0
   m_CameraSettings:
@@ -982,7 +982,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.055258054, y: 0.13645649, z: -0.007621388, w: -0.9890854}
+  m_LastSceneViewRotation: {x: 0.15102416, y: -0.37237325, z: 0.061541278, w: 0.9136696}
   m_LastSceneViewOrtho: 0
   m_Viewpoint:
     m_SceneView: {fileID: 14}
@@ -1275,7 +1275,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 72330000
     m_LastClickedID: 13170
-    m_ExpandedIDs: 000000004eb6000050b6000052b6000054b60000
+    m_ExpandedIDs: 000000007ab600007cb600007eb6000080b60000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1304,7 +1304,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004eb6000050b6000052b6000054b60000
+    m_ExpandedIDs: 000000007ab600007cb600007eb6000080b60000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
