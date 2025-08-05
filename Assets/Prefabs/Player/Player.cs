@@ -68,13 +68,10 @@ public class Player : MonoBehaviour
     private float _slowDownFactor = 0.25f;
 
     [Header("Quick Time Event Settings")]
-    [SerializeField, Tooltip("Reference to the launch button in the UI.")]
-    private GameObject _launchButtonReference;
-
-    [SerializeField, Tooltip("Reference to the attack button in the UI.")]
-    private GameObject _attackButtonReference;
-
     private float adjustedFixedDeltaTime;
+
+    [SerializeField, Tooltip("Reference to the UI handler in this component.")]
+    private UIController _uiController;
 
     [SerializeField, Tooltip("The QTE event component.")]
     private QuickTimeEventComponent _qteComponent;
@@ -90,8 +87,7 @@ public class Player : MonoBehaviour
         adjustedFixedDeltaTime = Time.fixedDeltaTime * _slowDownFactor;
 
         // Disable UI buttons, so that they are enabled on attack/launch range enter
-        _launchButtonReference.SetActive(false);
-        _attackButtonReference.SetActive(false);
+        _uiController.HideButtons();
 
         _attackReference.action.performed += ctx => _qteComponent.Trigger();
         _jumpReference.action.performed += ctx => LaunchToTarget();
@@ -172,13 +168,15 @@ public class Player : MonoBehaviour
     /// <summary>
     /// Attacks the target enemy if within range.
     /// </summary>
-    public void AttackTarget()
+    private void AttackTarget()
     {
         if (_attackTarget == null)
         {
             Debug.LogWarning("Attack target is not set. Cannot attack.");
             return;
         }
+
+        _attackTarget.GetComponent<HealthComponent>().Damage(1f);
     }
 
     /// <summary>
@@ -186,7 +184,9 @@ public class Player : MonoBehaviour
     /// </summary>
     public void OnAttackEventTrigger()
     {
-        Debug.LogFormat("Attack button pressed! Current count: {0}, Threshold: {1}", _qteComponent.GetCurrentCount(), _qteComponent.GetThreshold());
+        Debug.LogFormat("Attacked enemy! Current count: {0}, Threshold: {1}", _qteComponent.GetCurrentCount(), _qteComponent.GetThreshold());
+
+        AttackTarget();
     }
 
     /// <summary>
@@ -201,8 +201,7 @@ public class Player : MonoBehaviour
 
         RevertSlowDownTime();
 
-        _launchButtonReference.SetActive(false);
-        _attackButtonReference.SetActive(false);
+        _uiController.HideButtons();
     }
 
     public void OnAttackEventFailure()
@@ -214,8 +213,8 @@ public class Player : MonoBehaviour
 
         ResetTarget();
         RevertSlowDownTime();
-        _launchButtonReference.SetActive(false);
-        _attackButtonReference.SetActive(false);
+
+        _uiController.HideButtons();
     }
 
     private void ResetTarget()
@@ -243,7 +242,7 @@ public class Player : MonoBehaviour
             _jumpTarget = other.transform.position;
             _jumpTargetId = other.GetInstanceID();
 
-            _launchButtonReference.SetActive(true);
+            _uiController.ShowLaunchButton();
         }
     }
 
@@ -269,7 +268,7 @@ public class Player : MonoBehaviour
             _attackTarget = enemy.gameObject;
 
             // Enable attack button in UI
-            _attackButtonReference.SetActive(true);
+            _uiController.ShowAttackButton();
 
             // Slow down time for the QTE
             SlowDownTime();
@@ -294,7 +293,7 @@ public class Player : MonoBehaviour
             _jumpTarget = Vector3.zero;
             _jumpTargetId = 0;
 
-            _launchButtonReference.SetActive(false);
+            _uiController.HideLaunchButton();
 
             RevertSlowDownTime();
         }
@@ -316,7 +315,7 @@ public class Player : MonoBehaviour
 
             _attackTarget = null;
 
-            _attackButtonReference.SetActive(false);
+            _uiController.HideAttackButton();
 
             RevertSlowDownTime();
         }
