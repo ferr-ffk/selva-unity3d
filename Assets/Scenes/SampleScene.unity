@@ -236,7 +236,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 766, y: 106}
-  m_SizeDelta: {x: 205.5675, y: 179.5198}
+  m_SizeDelta: {x: 265.0509, y: 179.5198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &195789091
 MonoBehaviour:
@@ -812,7 +812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8390343063295922429, guid: 350a03dbe350b7346a33de5e32dc9a0f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.5
+      value: -7.4
       objectReference: {fileID: 0}
     - target: {fileID: 8390343063295922429, guid: 350a03dbe350b7346a33de5e32dc9a0f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -948,7 +948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8390343063295922429, guid: 350a03dbe350b7346a33de5e32dc9a0f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.16
+      value: 6.26
       objectReference: {fileID: 0}
     - target: {fileID: 8390343063295922429, guid: 350a03dbe350b7346a33de5e32dc9a0f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1230,7 +1230,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0d941ab4d15ce241918ea96262fb4e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canvasReference: {fileID: 327320549}
+  _attackButton: {fileID: 2020295244}
+  _launchButton: {fileID: 195789089}
 --- !u!1 &1408283600
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,7 +1379,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 518, y: -166}
-  m_SizeDelta: {x: 199.645, y: 213.3936}
+  m_SizeDelta: {x: 259.1286, y: 213.3936}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2020295246
 MonoBehaviour:
@@ -1709,7 +1710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8390343063295922429, guid: 350a03dbe350b7346a33de5e32dc9a0f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.13
+      value: -0.03000021
       objectReference: {fileID: 0}
     - target: {fileID: 8390343063295922429, guid: 350a03dbe350b7346a33de5e32dc9a0f, type: 3}
       propertyPath: m_LocalPosition.y

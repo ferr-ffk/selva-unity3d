@@ -6,16 +6,57 @@ using UnityEngine;
 public class UIController : MonoBehaviour
 {
     [Header("Reference")]
-    [SerializeField, Tooltip("Reference to the canvas object containing the UI buttons.")]
-    private Canvas _canvasReference;
+    [SerializeField, Tooltip("Reference to the button used for attacking.")]
+    private GameObject _attackButton;
 
-    public void ShowUI()
+    [SerializeField, Tooltip("Reference to the button used for jumping.")]
+    private GameObject _launchButton;
+
+    public void ShowAttackButton()
     {
-        _canvasReference.enabled = true;
+        if (_attackButton != null)
+        {
+            _attackButton.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("Attack button reference is not set.");
+        }
     }
 
-    public void HideUI()
+    public void HideAttackButton()
     {
-        _canvasReference.enabled = false;
+        if (_attackButton != null)
+        {
+            _attackButton.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("Attack button reference is not set.");
+        }
+    }
+
+    public void ShowLaunchButton()
+    {
+        if (_launchButton != null)
+        {
+            _launchButton.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("Launch button reference is not set.");
+        }
+    }
+
+    public void HideLaunchButton()
+    {
+        if (_launchButton != null)
+        {
+            _launchButton.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("Launch button reference is not set.");
+        }
     }
 }

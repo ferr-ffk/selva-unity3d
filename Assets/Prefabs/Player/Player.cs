@@ -93,7 +93,8 @@ public class Player : MonoBehaviour
         adjustedFixedDeltaTime = Time.fixedDeltaTime * _slowDownFactor;
 
         // Disable UI buttons, so that they are enabled on attack/launch range enter
-        _uiButtons.HideUI();
+        _uiButtons.HideAttackButton();
+        _uiButtons.HideLaunchButton();
 
         _attackReference.action.performed += ctx => _qteComponent.Trigger();
         _jumpReference.action.performed += ctx => LaunchToTarget();
@@ -150,7 +151,8 @@ public class Player : MonoBehaviour
 
         ResetTarget();
         RevertSlowDownTime();
-        _uiButtons.HideUI();
+        _uiButtons.HideAttackButton();
+        _uiButtons.HideLaunchButton();
     }
 
     public void OnAttackEventFailure()
@@ -165,7 +167,8 @@ public class Player : MonoBehaviour
         ResetTarget();
         RevertSlowDownTime();
 
-        _uiButtons.HideUI();
+        _uiButtons.HideAttackButton();
+        _uiButtons.HideLaunchButton();
     }
 
     private void ResetTarget()
@@ -219,6 +222,9 @@ public class Player : MonoBehaviour
             // Launch player to target once triggered and check if it's grounded
             if (_jumpReference.action.triggered && _movementComponent.Grounded())
             {
+                // Makes the player look at the jump target before launching
+                _armature.transform.LookAt(_jumpTarget);
+
                 _launchComponent.LaunchTo(_jumpTarget);
             }
         }
@@ -240,7 +246,7 @@ public class Player : MonoBehaviour
             _jumpTarget = other.transform.position;
             _jumpTargetId = other.GetInstanceID();
 
-            _uiButtons.ShowUI();
+            _uiButtons.ShowLaunchButton();
         }
     }
 
@@ -269,7 +275,7 @@ public class Player : MonoBehaviour
             _attackTarget = enemy.gameObject;
 
             // Enable attack button in UI
-            _uiButtons.ShowUI();
+            _uiButtons.ShowAttackButton();
 
             // Slow down time for the QTE
             SlowDownTime();
@@ -294,7 +300,8 @@ public class Player : MonoBehaviour
             _jumpTarget = Vector3.zero;
             _jumpTargetId = 0;
 
-            _uiButtons.HideUI();
+            _uiButtons.HideLaunchButton();
+            _uiButtons.HideAttackButton();
 
             RevertSlowDownTime();
         }
@@ -316,7 +323,7 @@ public class Player : MonoBehaviour
 
             _attackTarget = null;
 
-            _uiButtons.HideUI();
+            _uiButtons.HideAttackButton();
 
             RevertSlowDownTime();
         }
