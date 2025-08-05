@@ -668,9 +668,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a08019ae3ff54d14e90cda52534b70c5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1812032373799028258}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a08019ae3ff54d14e90cda52534b70c5, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 9114427577364956185}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a08019ae3ff54d14e90cda52534b70c5, type: 3}
       insertIndex: -1
@@ -706,20 +703,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a08019ae3ff54d14e90cda52534b70c5, type: 3}
   m_PrefabInstance: {fileID: 5165230325704598581}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1812032373799028258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5435840681807419748}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0d941ab4d15ce241918ea96262fb4e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _launchButtonReference: {fileID: 0}
-  _attackButtonReference: {fileID: 0}
 --- !u!114 &9114427577364956185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,9 +715,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ce51be860a79141907a56a387f1464, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementComponent: {fileID: 5203276251078053181}
-  _launchComponent: {fileID: 8123152349077528546}
-  _rigidBody: {fileID: 4147335303912733525}
   _movementReference: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _lookReference: {fileID: -5630151704836100654, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _jumpReference: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
@@ -744,7 +724,7 @@ MonoBehaviour:
   _jumpTarget: {x: 0, y: 0, z: 0}
   _attackTarget: {fileID: 0}
   _slowDownFactor: 0.25
-  _uiController: {fileID: 1812032373799028258}
+  _uiController: {fileID: 0}
   _qteComponent: {fileID: 6899536296739627964}
   _qteText: {fileID: 0}
 --- !u!114 &5203276251078053181

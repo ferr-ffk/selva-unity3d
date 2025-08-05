@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
-using UnityEngine.UIElements;
 
+[RequireComponent(typeof(Rigidbody))]
 public class MovementComponent : MonoBehaviour
 {
 
@@ -30,17 +30,10 @@ public class MovementComponent : MonoBehaviour
 
     private void Start()
     {
-        // Freezes the rotation of the object so it doesn't fall
         _rigidbody = GetComponent<Rigidbody>();
-        if (_rigidbody == null)
-        {
-            Debug.LogError("Rigidbody not found!");
-            return;
-        } 
-        else
-        {
-            _rigidbody.freezeRotation = true;
-        }
+
+        // Freezes the rotation of the object so it doesn't fall
+        _rigidbody.freezeRotation = true;
 
         // Gets the CharacterController component from the object, if it exists
         isPlayer = TryGetComponent<CharacterController>(out _characterController);

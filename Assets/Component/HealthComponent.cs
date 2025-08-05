@@ -3,9 +3,11 @@ using UnityEngine.Events;
 
 public class HealthComponent : MonoBehaviour
 {
+    [Header("Configuration")]
     [SerializeField, Tooltip("The maximum health of the object.")]
     private float _maxHealth;
 
+    [Header("Events")]
     [SerializeField, Tooltip("Emitted once at death.")]
     public UnityEvent Died = new UnityEvent();
 

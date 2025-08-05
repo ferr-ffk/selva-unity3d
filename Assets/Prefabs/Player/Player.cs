@@ -7,21 +7,22 @@ using UnityEngine.UI;
 /// <summary>
 /// Controls the player character, handling movement, launching, and interactions with enemies.
 /// </summary>
+[RequireComponent(typeof(MovementComponent))]
+[RequireComponent(typeof(LaunchComponent))]
+[RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
-
     // Movement and Jump Components
-    [Header("Movement and Jump Components")]
-    [Tooltip("Component responsible for player movement.")]
-    [SerializeField]
+
+    /// <summary>
+    /// Component responsible for player movement.
+    /// </summary>
     private MovementComponent _movementComponent;
 
-    [SerializeField, Tooltip("Component responsible for launching mechanics")]
+    /// <summary>
+    /// Component responsible for launching mechanics
+    /// </summary>
     private LaunchComponent _launchComponent;
-
-    [Tooltip("Rigidbody of the player, used for physics-based interactions.")]
-    [SerializeField]
-    private Rigidbody _rigidBody;
 
     // Input References
     [Header("Input References")]
@@ -84,10 +85,13 @@ public class Player : MonoBehaviour
     /// </summary>
     void Start()
     {
+        _movementComponent = GetComponent<MovementComponent>();
+        _launchComponent = GetComponent<LaunchComponent>();
+
         adjustedFixedDeltaTime = Time.fixedDeltaTime * _slowDownFactor;
 
         // Disable UI buttons, so that they are enabled on attack/launch range enter
-        _uiController.HideButtons();
+        _uiController.HideUI();
 
         _attackReference.action.performed += ctx => _qteComponent.Trigger();
         _jumpReference.action.performed += ctx => LaunchToTarget();
@@ -102,6 +106,67 @@ public class Player : MonoBehaviour
     /// Called once per frame. Handles player movement, rotation, and launching logic.
     /// </summary>
     void Update()
+    {
+        // Handle player movement and rotation
+        HandleMovement();
+
+        // Checks QTE
+        if (_qteComponent.Running)
+        {
+            // If the QTE is running, check if the attack button was pressed
+            _qteText.text = "QTE Triggered! Press 'Attack' again to succeed!";
+        }
+    }
+
+    /// <summary>
+    /// Triggered when the attack button is pressed in the UI. Debugs the action and prepares for the quick time event (QTE).
+    /// </summary>
+    public void OnAttackEventTrigger()
+    {
+        Debug.LogFormat("Attacked enemy! Current count: {0}, Threshold: {1}", _qteComponent.GetCurrentCount(), _qteComponent.GetThreshold());
+    }
+
+    /// <summary>
+    /// Kills the target specified, runs on quick time event success.
+    /// </summary>
+    public void OnAttackEventSuccess()
+    {
+        // Insta kill
+        _attackTarget.GetComponent<HealthComponent>().Damage(100000f);
+
+        Debug.Log("Target enemy has died. Resetting UI and tracking variables.");
+
+        ResetTarget();
+        RevertSlowDownTime();
+        _uiController.HideUI();
+    }
+
+    public void OnAttackEventFailure()
+    {
+        // Damages the player
+        Debug.Log("Damaging the player: -10 HP");
+
+        Debug.Log("Attack event failed. Resetting UI and tracking variables.");
+
+        ResetTarget();
+        RevertSlowDownTime();
+
+        _uiController.HideUI();
+    }
+
+    private void ResetTarget()
+    {
+        _jumpTarget = Vector3.zero;
+        _jumpTargetId = 0;
+
+        _attackTarget = null;
+        _attackTargetId = 0;
+    }
+
+    /// <summary>
+    /// Handles player movement based on input from the joystick.
+    /// </summary>
+    private void HandleMovement()
     {
         // Obtém o vetor 2D de direção a partir do input
         Vector2 joystickDirection = _movementReference.action.ReadValue<Vector2>();
@@ -124,7 +189,13 @@ public class Player : MonoBehaviour
 
         // Move o Jogador
         _movementComponent.Move(gameObject, direction, cameraRotation);
+    }
 
+    /// <summary>
+    /// Handles the jump logic.
+    /// </summary>
+    private void LaunchToTarget()
+    {
         // If the jump target is null, skip the jumping logic
         if (_jumpTarget != Vector3.zero)
         {
@@ -134,96 +205,9 @@ public class Player : MonoBehaviour
             // Launch player to target once triggered and check if it's grounded
             if (_jumpReference.action.triggered && _movementComponent.Grounded())
             {
-                LaunchToTarget();
+                _launchComponent.LaunchTo(_jumpTarget);
             }
         }
-
-        // Checks QTE
-        if (_qteComponent.Running)
-        {
-            // If the QTE is running, check if the attack button was pressed
-            _qteText.text = "QTE Triggered! Press 'Attack' again to succeed!";
-        }
-        else
-        {
-            // If the QTE is not running, reset the text
-            _qteText.text = "";
-        }
-    }
-
-    /// <summary>
-    /// Launches the player towards the current jump target position.
-    /// </summary>
-    public void LaunchToTarget()
-    {
-        if (_jumpTarget == Vector3.zero)
-        {
-            Debug.LogWarning("Jump target is not set. Cannot launch.");
-            return;
-        }
-
-        _launchComponent.LaunchTo(_jumpTarget);
-    }
-
-    /// <summary>
-    /// Attacks the target enemy if within range.
-    /// </summary>
-    private void AttackTarget()
-    {
-        if (_attackTarget == null)
-        {
-            Debug.LogWarning("Attack target is not set. Cannot attack.");
-            return;
-        }
-
-        _attackTarget.GetComponent<HealthComponent>().Damage(1f);
-    }
-
-    /// <summary>
-    /// Triggered when the attack button is pressed in the UI. Debugs the action and prepares for the quick time event (QTE).
-    /// </summary>
-    public void OnAttackEventTrigger()
-    {
-        Debug.LogFormat("Attacked enemy! Current count: {0}, Threshold: {1}", _qteComponent.GetCurrentCount(), _qteComponent.GetThreshold());
-
-        AttackTarget();
-    }
-
-    /// <summary>
-    /// Kills the target specified, runs on quick time event success.
-    /// </summary>
-    public void OnAttackEventSuccess()
-    {
-        _attackTarget.GetComponent<HealthComponent>().Damage(100000f);
-
-        Debug.Log("Target enemy has died. Resetting UI and tracking variables.");
-        ResetTarget();
-
-        RevertSlowDownTime();
-
-        _uiController.HideButtons();
-    }
-
-    public void OnAttackEventFailure()
-    {
-        // Damages the player
-        Debug.Log("Damaging the player: -10 HP");
-
-        Debug.Log("Attack event failed. Resetting UI and tracking variables.");
-
-        ResetTarget();
-        RevertSlowDownTime();
-
-        _uiController.HideButtons();
-    }
-
-    private void ResetTarget()
-    {
-        _jumpTarget = Vector3.zero;
-        _jumpTargetId = 0;
-
-        _attackTarget = null;
-        _attackTargetId = 0;
     }
 
     /// <summary>
@@ -242,7 +226,7 @@ public class Player : MonoBehaviour
             _jumpTarget = other.transform.position;
             _jumpTargetId = other.GetInstanceID();
 
-            _uiController.ShowLaunchButton();
+            _uiController.ShowUI();
         }
     }
 
@@ -268,7 +252,7 @@ public class Player : MonoBehaviour
             _attackTarget = enemy.gameObject;
 
             // Enable attack button in UI
-            _uiController.ShowAttackButton();
+            _uiController.ShowUI();
 
             // Slow down time for the QTE
             SlowDownTime();
@@ -293,7 +277,7 @@ public class Player : MonoBehaviour
             _jumpTarget = Vector3.zero;
             _jumpTargetId = 0;
 
-            _uiController.HideLaunchButton();
+            _uiController.HideUI();
 
             RevertSlowDownTime();
         }
@@ -315,7 +299,7 @@ public class Player : MonoBehaviour
 
             _attackTarget = null;
 
-            _uiController.HideAttackButton();
+            _uiController.HideUI();
 
             RevertSlowDownTime();
         }

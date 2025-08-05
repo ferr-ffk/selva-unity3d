@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class LaunchComponent : MonoBehaviour
 {
     [Header("Launch Component")]
@@ -18,13 +19,11 @@ public class LaunchComponent : MonoBehaviour
     [SerializeField, Tooltip("Color of the debug path, defaults to green.")]
     private Color _debugPathColor = Color.green;
 
-    private Rigidbody _obj;
-
-    private bool _hasRigidBody;
+    private Rigidbody _rigidBody;
 
     void Start()
     {
-        _hasRigidBody = TryGetComponent<Rigidbody>(out _obj);
+        _rigidBody = GetComponent<Rigidbody>();
     }
 
     /// <summary>
@@ -38,17 +37,11 @@ public class LaunchComponent : MonoBehaviour
     /// </remarks>
     public void LaunchTo(Vector3 target)
     {
-        if (!_hasRigidBody)
-        {
-            Debug.LogError("No Rigidbody found on this object. Please add a Rigidbody component.");
-            return;
-        }
-
         Physics.gravity = Vector3.up * _gravity;
 
-        _obj.useGravity = true;
+        _rigidBody.useGravity = true;
 
-        _obj.linearVelocity = CalculateLaunchData(target, _jumpHeight).initialVelocity;
+        _rigidBody.linearVelocity = CalculateLaunchData(target, _jumpHeight).initialVelocity;
     }
 
     public void LaunchTo(Vector3 target, float jumpHeight)
@@ -56,6 +49,48 @@ public class LaunchComponent : MonoBehaviour
         _jumpHeight = jumpHeight;
 
         LaunchTo(target);
+
+        _jumpHeight = defaultJumpHeight;
+    }
+
+    /// <summary>
+    /// Draws the parabolic path of the object towards the specified target position.
+    /// </summary>
+    /// <param name="target">The target position to visualize the trajectory towards.</param>
+    /// <remarks>
+    /// This method calculates the trajectory of the object using the initial velocity and gravity,
+    /// then draws a series of lines in the Unity editor to represent the path. The resolution of the
+    /// path determines the number of segments used to draw the trajectory.
+    /// </remarks>
+    public void DrawPath(Vector3 target)
+    {
+        LaunchData launchData = CalculateLaunchData(target, _jumpHeight);
+        Vector3 previousDrawPoint = _rigidBody.position;
+
+        int resolution = 30;
+        for (int i = 1; i <= resolution; i++)
+        {
+            float simulationTime = i / (float) resolution * launchData.timeToTarget;
+
+            Vector3 displacement = launchData.initialVelocity * simulationTime + Vector3.up * _gravity * simulationTime * simulationTime / 2f;
+            Vector3 drawPoint = _rigidBody.position + displacement;
+
+            Debug.DrawLine(previousDrawPoint, drawPoint, _debugPathColor);
+
+            previousDrawPoint = drawPoint;
+        }
+    }
+
+    /// <summary>
+    /// Draws the parabolic path of the object towards the specified target position with a custom jump height. See <see cref="DrawPath(Vector3)"/>
+    /// </summary>
+    /// <param name="target"></param>
+    /// <param name="jumpHeight"></param>
+    public void DrawPath(Vector3 target, float jumpHeight)
+    {
+        _jumpHeight = jumpHeight;
+
+        DrawPath(target);
 
         _jumpHeight = defaultJumpHeight;
     }
@@ -72,9 +107,9 @@ public class LaunchComponent : MonoBehaviour
     /// </remarks>
     private LaunchData CalculateLaunchData(Vector3 target, float height)
     {
-        float displacementY = target.y - _obj.position.y;
+        float displacementY = target.y - _rigidBody.position.y;
 
-        Vector3 displacementXZ = new Vector3(target.x - _obj.position.x, 0, target.z - _obj.position.z);
+        Vector3 displacementXZ = new Vector3(target.x - _rigidBody.position.x, 0, target.z - _rigidBody.position.z);
 
         float time = Mathf.Sqrt(-2 * height / _gravity) + Mathf.Sqrt(2 * (displacementY - height) / _gravity);
 
@@ -82,44 +117,6 @@ public class LaunchComponent : MonoBehaviour
         Vector3 velocityXZ = displacementXZ / time;
 
         return new LaunchData(velocityXZ + velocityY * -Mathf.Sign(_gravity), time);
-    }
-
-
-    /// <summary>
-    /// Draws the parabolic path of the object towards the specified target position.
-    /// </summary>
-    /// <param name="target">The target position to visualize the trajectory towards.</param>
-    /// <remarks>
-    /// This method calculates the trajectory of the object using the initial velocity and gravity,
-    /// then draws a series of lines in the Unity editor to represent the path. The resolution of the
-    /// path determines the number of segments used to draw the trajectory.
-    /// </remarks>
-    public void DrawPath(Vector3 target)
-    {
-        LaunchData launchData = CalculateLaunchData(target, _jumpHeight);
-        Vector3 previousDrawPoint = _obj.position;
-
-        int resolution = 30;
-        for (int i = 1; i <= resolution; i++)
-        {
-            float simulationTime = i / (float) resolution * launchData.timeToTarget;
-
-            Vector3 displacement = launchData.initialVelocity * simulationTime + Vector3.up * _gravity * simulationTime * simulationTime / 2f;
-            Vector3 drawPoint = _obj.position + displacement;
-
-            Debug.DrawLine(previousDrawPoint, drawPoint, _debugPathColor);
-
-            previousDrawPoint = drawPoint;
-        }
-    }
-
-    public void DrawPath(Vector3 target, float jumpHeight)
-    {
-        _jumpHeight = jumpHeight;
-
-        DrawPath(target);
-
-        _jumpHeight = defaultJumpHeight;
     }
 
     struct LaunchData

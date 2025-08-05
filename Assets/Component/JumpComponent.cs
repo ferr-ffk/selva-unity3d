@@ -1,8 +1,11 @@
 using System;
+using Unity.Cinemachine;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class JumpComponent : MonoBehaviour
 {
+    [Header("Configuration")]
     [SerializeField, Tooltip("A velocidade de pulo, sendo pulo o movimento em direção Y+. Deve ser definida.")]
     private float _velocidadePulo;
 

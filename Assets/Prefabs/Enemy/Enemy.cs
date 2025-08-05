@@ -13,15 +13,14 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         _healthPorcentage.text = GetFormattedHealthPercentage();
+
         _healthComponent.Died.AddListener(OnDied);
+        _healthComponent.HealthChanged.AddListener(OnHealthChanged);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /// <summary>
+    /// Called when the enemy dies.
+    /// </summary>
     private void OnDied()
     {
         _healthPorcentage.text = "0%";
@@ -30,6 +29,10 @@ public class Enemy : MonoBehaviour
         Destroy(this, 3f); // Destroy the script after 3 seconds
     }
 
+    /// <summary>
+    /// Called when the health of the enemy changes.
+    /// </summary>
+    /// <param name="health"></param>
     public void OnHealthChanged(float health)
     {
         _healthPorcentage.text = GetFormattedHealthPercentage();

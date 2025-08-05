@@ -1,43 +1,21 @@
 using UnityEngine;
 
+/// <summary>
+/// UIController is responsible for managing the visibility of UI buttons in the game.
+/// </summary>
 public class UIController : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField, Tooltip("Reference for launch button")]
-    private GameObject _launchButtonReference;
+    [Header("Reference")]
+    [SerializeField, Tooltip("Reference to the canvas object containing the UI buttons.")]
+    private Canvas _canvasReference;
 
-    [SerializeField, Tooltip("Reference for attack button")]
-    private GameObject _attackButtonReference;
-
-    public void ShowButtons()
+    public void ShowUI()
     {
-        ShowAttackButton();
-        ShowLaunchButton();
+        _canvasReference.enabled = true;
     }
 
-    public void HideButtons()
+    public void HideUI()
     {
-        HideAttackButton();
-        HideLaunchButton();
-    }
-
-    public void ShowLaunchButton()
-    {
-        _launchButtonReference.SetActive(true);
-    }
-
-    public void HideLaunchButton()
-    {
-        _launchButtonReference.SetActive(false);
-    }
-
-    public void ShowAttackButton()
-    {
-        _attackButtonReference.SetActive(true);
-    }
-
-    public void HideAttackButton()
-    {
-        _attackButtonReference.SetActive(false);
+        _canvasReference.enabled = false;
     }
 }
