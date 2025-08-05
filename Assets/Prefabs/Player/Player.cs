@@ -71,8 +71,8 @@ public class Player : MonoBehaviour
     [Header("Quick Time Event Settings")]
     private float adjustedFixedDeltaTime;
 
-    [SerializeField, Tooltip("Reference to the UI handler in this component.")]
-    private UIController _uiController;
+    [SerializeField, Tooltip("Reference to the UI handler for the launch button in this component.")]
+    private UIController _uiButtons;
 
     [SerializeField, Tooltip("The QTE event component.")]
     private QuickTimeEventComponent _qteComponent;
@@ -91,7 +91,7 @@ public class Player : MonoBehaviour
         adjustedFixedDeltaTime = Time.fixedDeltaTime * _slowDownFactor;
 
         // Disable UI buttons, so that they are enabled on attack/launch range enter
-        _uiController.HideUI();
+        _uiButtons.HideUI();
 
         _attackReference.action.performed += ctx => _qteComponent.Trigger();
         _jumpReference.action.performed += ctx => LaunchToTarget();
@@ -123,6 +123,18 @@ public class Player : MonoBehaviour
     /// </summary>
     public void OnAttackEventTrigger()
     {
+        if (_attackTarget == null)
+        {
+            Debug.LogWarning("No attack target assigned. Cannot trigger attack event.");
+            return;
+        }
+
+        // Gets the exact damage needed to deal to the target based on the QTE threshold
+        // example: if the threshold is 5, and the target has 100 HP, then each attack will deal 20 damage
+        float damage = _attackTarget.GetComponent<HealthComponent>()._maxHealth / _qteComponent.GetThreshold();
+
+        _attackTarget.GetComponent<HealthComponent>().Damage(damage);
+
         Debug.LogFormat("Attacked enemy! Current count: {0}, Threshold: {1}", _qteComponent.GetCurrentCount(), _qteComponent.GetThreshold());
     }
 
@@ -138,7 +150,7 @@ public class Player : MonoBehaviour
 
         ResetTarget();
         RevertSlowDownTime();
-        _uiController.HideUI();
+        _uiButtons.HideUI();
     }
 
     public void OnAttackEventFailure()
@@ -151,7 +163,7 @@ public class Player : MonoBehaviour
         ResetTarget();
         RevertSlowDownTime();
 
-        _uiController.HideUI();
+        _uiButtons.HideUI();
     }
 
     private void ResetTarget()
@@ -226,7 +238,7 @@ public class Player : MonoBehaviour
             _jumpTarget = other.transform.position;
             _jumpTargetId = other.GetInstanceID();
 
-            _uiController.ShowUI();
+            _uiButtons.ShowUI();
         }
     }
 
@@ -252,7 +264,7 @@ public class Player : MonoBehaviour
             _attackTarget = enemy.gameObject;
 
             // Enable attack button in UI
-            _uiController.ShowUI();
+            _uiButtons.ShowUI();
 
             // Slow down time for the QTE
             SlowDownTime();
@@ -277,7 +289,7 @@ public class Player : MonoBehaviour
             _jumpTarget = Vector3.zero;
             _jumpTargetId = 0;
 
-            _uiController.HideUI();
+            _uiButtons.HideUI();
 
             RevertSlowDownTime();
         }
@@ -299,7 +311,7 @@ public class Player : MonoBehaviour
 
             _attackTarget = null;
 
-            _uiController.HideUI();
+            _uiButtons.HideUI();
 
             RevertSlowDownTime();
         }

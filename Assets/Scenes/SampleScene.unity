@@ -154,7 +154,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1.9162, y: -444}
-  m_SizeDelta: {x: 706.5995, y: 159.8849}
+  m_SizeDelta: {x: 1322.6, y: 159.8849}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &133115451
 MonoBehaviour:
@@ -235,8 +235,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 550, y: 0}
-  m_SizeDelta: {x: 389.5681, y: 213.3936}
+  m_AnchoredPosition: {x: 766, y: 106}
+  m_SizeDelta: {x: 205.5675, y: 179.5198}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &195789091
 MonoBehaviour:
@@ -417,8 +417,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -500,9 +500,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2020295245}
   - {fileID: 195789090}
   - {fileID: 133115450}
+  - {fileID: 2020295245}
   m_Father: {fileID: 353642328}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1377,8 +1377,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -550, y: 0}
-  m_SizeDelta: {x: 389.5681, y: 213.3936}
+  m_AnchoredPosition: {x: 518, y: -166}
+  m_SizeDelta: {x: 199.645, y: 213.3936}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2020295246
 MonoBehaviour:
@@ -1559,8 +1559,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90
-  m_fontSizeBase: 90
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1621,15 +1621,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4621868458778280926, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.21
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4621868458778280926, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.309
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4621868458778280926, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.7
+      value: -15.495
       objectReference: {fileID: 0}
     - target: {fileID: 4621868458778280926, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1668,7 +1668,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 133115451}
     - target: {fileID: 9114427577364956185, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
+      propertyPath: _uiButtons
+      value: 
+      objectReference: {fileID: 1134517904}
+    - target: {fileID: 9114427577364956185, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
       propertyPath: _uiController
+      value: 
+      objectReference: {fileID: 1134517904}
+    - target: {fileID: 9114427577364956185, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
+      propertyPath: _attackButtonController
+      value: 
+      objectReference: {fileID: 1134517904}
+    - target: {fileID: 9114427577364956185, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
+      propertyPath: _launchButtonController
       value: 
       objectReference: {fileID: 1134517904}
     m_RemovedComponents: []

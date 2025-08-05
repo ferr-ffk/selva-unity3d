@@ -5,7 +5,10 @@ public class HealthComponent : MonoBehaviour
 {
     [Header("Configuration")]
     [SerializeField, Tooltip("The maximum health of the object.")]
-    private float _maxHealth;
+    /// <summary>
+    /// Maximum health for this component.
+    /// </summary>
+    public float _maxHealth;
 
     [Header("Events")]
     [SerializeField, Tooltip("Emitted once at death.")]
