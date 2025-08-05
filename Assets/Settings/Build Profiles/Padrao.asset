@@ -165,7 +165,7 @@ MonoBehaviour:
     - line: '|   loadStoreDebugModeEnabled: 0'
     - line: '|   visionOSBundleVersion: 1.0'
     - line: '|   tvOSBundleVersion: 1.0'
-    - line: '|   bundleVersion: 0.0.1'
+    - line: '|   bundleVersion: 0.0.2'
     - line: '|   preloadedAssets:'
     - line: '|   - {instanceID: 0}'
     - line: '|   - {instanceID: 0}'
@@ -192,7 +192,7 @@ MonoBehaviour:
     - line: '|   androidMaxAspectRatio: 2.4'
     - line: '|   androidMinAspectRatio: 1'
     - line: '|   applicationIdentifier:'
-    - line: '|     Android: com.UnityTechnologies.Mobile3DTemplate'
+    - line: '|     Android: com.effedev.Selva'
     - line: '|     Standalone: com.UnityTechnologies.Mobile3DTemplate'
     - line: '|     iPhone: com.UnityTechnologies.Mobile3DTemplate'
     - line: '|   buildNumber:'
@@ -200,7 +200,7 @@ MonoBehaviour:
     - line: '|     VisionOS: 0'
     - line: '|     iPhone: 0'
     - line: '|     tvOS: 0'
-    - line: '|   overrideDefaultApplicationIdentifier: 1'
+    - line: '|   overrideDefaultApplicationIdentifier: 0'
     - line: '|   AndroidBundleVersionCode: 1'
     - line: '|   AndroidMinSdkVersion: 23'
     - line: '|   AndroidTargetSdkVersion: 0'
@@ -967,7 +967,7 @@ MonoBehaviour:
     - rid: 7049200478800576514
       type: {class: AndroidPlatformBuildSettings, ns: UnityEditor.Android, asm: UnityEditor.Android.Extensions}
       data:
-        m_Development: 0
+        m_Development: 1
         m_ConnectProfiler: 0
         m_BuildWithDeepProfilingSupport: 0
         m_AllowDebugging: 0
@@ -983,8 +983,8 @@ MonoBehaviour:
         m_ExportAsGoogleAndroidProject: 0
         m_DebugSymbolLevel: 1
         m_DebugSymbolFormat: 5
-        m_CurrentDeploymentTargetId: __builtin__target_default
-        m_BuildType: 2
+        m_CurrentDeploymentTargetId: __builtin__target_all
+        m_BuildType: 1
         m_BuildAppBundle: 0
         m_IPAddressToConnect: 
         m_SymlinkSources: 0
