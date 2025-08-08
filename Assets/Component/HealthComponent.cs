@@ -41,7 +41,9 @@ public class HealthComponent : MonoBehaviour
     {
         CurrentHealth -= damage;
 
-        HealthChanged.Invoke(CurrentHealth);
+        HealthChanged.Invoke(GetHealthPorcentage());
+
+        Debug.Log("Damaged for " + damage + ", current health: " + GetHealthPorcentage());
 
         if (CurrentHealth <= 0)
         {
@@ -58,7 +60,7 @@ public class HealthComponent : MonoBehaviour
     {
         CurrentHealth = Mathf.Max(CurrentHealth + heal, _maxHealth);
 
-        HealthChanged.Invoke(CurrentHealth);
+        HealthChanged.Invoke(GetHealthPorcentage());
     }
 
     /// <summary>

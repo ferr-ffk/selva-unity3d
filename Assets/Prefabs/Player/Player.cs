@@ -143,7 +143,7 @@ public class Player : MonoBehaviour
     public void OnAttackEventSuccess()
     {
         // Insta kill
-        _attackTarget.GetComponent<HealthComponent>().Damage(100000f);
+        //_attackTarget.GetComponent<HealthComponent>().Damage(100000f);
 
         Debug.Log("Target enemy has died. Resetting UI and tracking variables.");
 
@@ -159,6 +159,8 @@ public class Player : MonoBehaviour
     {
         // Damages the player
         Debug.Log("Damaging the player: -10 HP");
+
+        GetComponent<HealthComponent>().Damage(10f);
 
         Debug.Log("Attack event failed. Resetting UI and tracking variables.");
 
