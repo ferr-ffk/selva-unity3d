@@ -17,6 +17,9 @@ public class MovementComponent : MonoBehaviour
     [SerializeField, Tooltip("The character's height.")]
     private float _height = 1f;
 
+    [SerializeField, Tooltip("Linear damping when component is not grounded")]
+    private float _airLinearDamping = 0.1f;
+
     [NonSerialized]
     public float timeWalking;
 
@@ -25,6 +28,8 @@ public class MovementComponent : MonoBehaviour
 
     [NonSerialized]
     public Vector3 currentVelocity = Vector3.zero;
+
+    private float defaultLinearDamping = 0.25f;
 
     private bool isPlayer;
 
@@ -37,6 +42,8 @@ public class MovementComponent : MonoBehaviour
 
         // Gets the CharacterController component from the object, if it exists
         isPlayer = TryGetComponent<CharacterController>(out _characterController);
+
+        defaultLinearDamping = _rigidbody.linearDamping;
     }
 
     /// <summary>
@@ -101,5 +108,17 @@ public class MovementComponent : MonoBehaviour
     public bool Grounded()
     {
         return Physics.Raycast(gameObject.transform.position, Vector3.down, _height * 0.5f + 0.3f, _groundLayer);
+    }
+
+    private void Update()
+    {
+        if (Grounded())
+        {
+            _rigidbody.linearDamping = defaultLinearDamping; // Applies default linear damping when grounded
+        }
+        else
+        {
+            _rigidbody.linearDamping = _airLinearDamping; // Applies low linear damping when not grounded    
+        }
     }
 }
