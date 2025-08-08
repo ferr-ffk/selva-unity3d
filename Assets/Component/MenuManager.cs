@@ -58,6 +58,9 @@ public class MenuManager : MonoBehaviour
 
         _currentCanvas?.gameObject.SetActive(false);
 
+        _currentCanvas = canvas;
+
         canvas.gameObject.SetActive(true);
+
     }
 }
