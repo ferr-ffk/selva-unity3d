@@ -121,4 +121,29 @@ public class MovementComponent : MonoBehaviour
             _rigidbody.linearDamping = _airLinearDamping; // Applies low linear damping when not grounded    
         }
     }
+
+    public void SetTargetVelocity(float newTargetVelocity)
+    {
+        _targetVelocity = newTargetVelocity;
+    }
+
+    public float GetTargetVelocity()
+    {
+        return _targetVelocity;
+    }
+
+    public void SetAcceleration(float newAcceleration)
+    {
+        if (_acceleration <= 0)
+        {
+            Debug.LogError("Acceleration must be greater than zero.");
+            return;
+        }
+        _acceleration = newAcceleration;
+    }
+
+    public float GetAcceleration()
+    {
+        return _acceleration;
+    }
 }
