@@ -135,12 +135,10 @@ public class Player : MonoBehaviour
         if (running)
         {
             _movementComponent.SetTargetVelocity(_movementComponent.GetTargetVelocity() * _runningMultiplier);
-            _movementComponent.SetAcceleration(_movementComponent.GetAcceleration() / _runningMultiplier);
         }
         else
         {
             _movementComponent.SetTargetVelocity(_movementComponent.GetTargetVelocity() / _runningMultiplier);
-            _movementComponent.SetAcceleration(_movementComponent.GetAcceleration() * _runningMultiplier);
         }
 
         _running = running;

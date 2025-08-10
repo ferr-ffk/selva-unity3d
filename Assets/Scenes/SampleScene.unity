@@ -1574,7 +1574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5203276251078053181, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
       propertyPath: _targetVelocity
-      value: 3.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5435840681807419748, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
       propertyPath: m_Name
@@ -1590,7 +1590,7 @@ PrefabInstance:
       objectReference: {fileID: 133115451}
     - target: {fileID: 9114427577364956185, guid: 965a53e394b16bc4db29c753754d4a75, type: 3}
       propertyPath: _runningMultiplier
-      value: 1.75
+      value: 1.35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1725,10 +1725,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GenericEnemy
       objectReference: {fileID: 0}
-    - target: {fileID: 2273607889414263592, guid: 350a03dbe350b7346a33de5e32dc9a0f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8390343063295922429, guid: 350a03dbe350b7346a33de5e32dc9a0f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.03000021
@@ -1768,14 +1764,6 @@ PrefabInstance:
     - target: {fileID: 8390343063295922429, guid: 350a03dbe350b7346a33de5e32dc9a0f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9138630787134313683, guid: 350a03dbe350b7346a33de5e32dc9a0f, type: 3}
-      propertyPath: HealthChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9138630787134313683, guid: 350a03dbe350b7346a33de5e32dc9a0f, type: 3}
-      propertyPath: HealthChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

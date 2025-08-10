@@ -8,9 +8,6 @@ public class MovementComponent : MonoBehaviour
     [SerializeField, Tooltip("The maximum velocity the object can achieve.")]
     private float _targetVelocity;
 
-    [SerializeField, Tooltip("Acceleration for the given object. Defaults to 1")]
-    private float _acceleration = 1.0f;
-
     [SerializeField, Tooltip("The layer mask belonging to the ground.")]
     private LayerMask _groundLayer;
 
@@ -24,14 +21,11 @@ public class MovementComponent : MonoBehaviour
     public float timeWalking;
 
     private Rigidbody _rigidbody;
-    private CharacterController _characterController;
 
     [NonSerialized]
     public Vector3 currentVelocity = Vector3.zero;
 
     private float defaultLinearDamping = 0.25f;
-
-    private bool isPlayer;
 
     private void Start()
     {
@@ -39,9 +33,6 @@ public class MovementComponent : MonoBehaviour
 
         // Freezes the rotation of the object so it doesn't fall
         _rigidbody.freezeRotation = true;
-
-        // Gets the CharacterController component from the object, if it exists
-        isPlayer = TryGetComponent<CharacterController>(out _characterController);
 
         defaultLinearDamping = _rigidbody.linearDamping;
     }
@@ -79,23 +70,9 @@ public class MovementComponent : MonoBehaviour
         // Calculates the desired movement velocity
         Vector3 targetVelocity = movementDirection * _targetVelocity;
 
-        // Calculates the acceleration value to be used in the Lerp
-        float accelerationValue = 1 - Mathf.Exp(-_acceleration * Time.deltaTime);
-
-        // Calculates the Lerp, which is essentially a way to smooth movement with acceleration
-        Vector3 lerpedDirection = Vector3.Lerp(currentVelocity, targetVelocity, accelerationValue);
-
         // Moves the object
-        // If it has the CharacterController component, use it for movement; otherwise, use the rigidbody
-        if (isPlayer)
-        {
-            _characterController.Move(lerpedDirection * Time.deltaTime);
-        } 
-        else
-        {
-            // Adds force to the object based on the player's acceleration; the airMultiplier makes the player move slower in the air and sets ForceMode.Force for consistent force application
-            _rigidbody.AddForce(lerpedDirection.normalized * _targetVelocity * 10f, ForceMode.Force);
-        }
+        // Adds force to the object based on the player's acceleration; the airMultiplier makes the player move slower in the air and sets ForceMode.Force for consistent force application
+        _rigidbody.AddForce(targetVelocity.normalized * _targetVelocity * 10f, ForceMode.Force);
 
         // Updates the local variable with the most recent velocity of the object
         currentVelocity = targetVelocity;
@@ -130,20 +107,5 @@ public class MovementComponent : MonoBehaviour
     public float GetTargetVelocity()
     {
         return _targetVelocity;
-    }
-
-    public void SetAcceleration(float newAcceleration)
-    {
-        if (_acceleration <= 0)
-        {
-            Debug.LogError("Acceleration must be greater than zero.");
-            return;
-        }
-        _acceleration = newAcceleration;
-    }
-
-    public float GetAcceleration()
-    {
-        return _acceleration;
     }
 }
