@@ -255,6 +255,9 @@ public class Player : MonoBehaviour
                 _armature.transform.LookAt(_jumpTarget);
 
                 _launchComponent.LaunchTo(_jumpTarget);
+
+                // Locks the movement to prevent player from moving while in QTE
+                _lockMovement = true;
             }
         }
     }
@@ -294,9 +297,6 @@ public class Player : MonoBehaviour
         if (other.TryGetComponent(out Enemy enemy) && _attackTargetId == 0 && _jumpTargetId == objId)
         {
             Debug.Log("Enemy in attack range: " + enemy.name);
-
-            // Lock movement to prevent player from moving while in QTE
-            _lockMovement = true;
 
             // Config tracking target
             _jumpTarget = other.transform.position;
