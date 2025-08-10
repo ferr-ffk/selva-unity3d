@@ -215,7 +215,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8814113506027901536
 MonoBehaviour:
@@ -680,7 +680,7 @@ PrefabInstance:
       addedObject: {fileID: 6899536296739627964}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a08019ae3ff54d14e90cda52534b70c5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8055342217270646212}
+      addedObject: {fileID: 5577421211603824871}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a08019ae3ff54d14e90cda52534b70c5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8123152349077528546}
@@ -724,9 +724,8 @@ MonoBehaviour:
   _attackReference: {fileID: 1120369429361536294, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   _camera: {fileID: 7203929248796926465}
   _armature: {fileID: 2234073572638674534}
-  _jumpTarget: {x: 0, y: 0, z: 0}
-  _attackTarget: {fileID: 0}
   _slowDownFactor: 0.25
+  _runningMultiplier: 3
   _uiButtons: {fileID: 4506240071509705048}
   _qteComponent: {fileID: 6899536296739627964}
   _qteText: {fileID: 0}
@@ -775,7 +774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3ebdd167df18f4d83bcb1a946496b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EventDuration: 10
+  EventDuration: 3
   _eventType: 1
   _threshold: 5
   _eventDescription: Attack! (T = 5)
@@ -827,7 +826,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
---- !u!114 &8055342217270646212
+--- !u!114 &5577421211603824871
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -836,7 +835,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5435840681807419748}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 719c937a2290be94ba32e5d6aaeeb75e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b17ed25e1074c54f820e6252c9df202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 25
@@ -845,7 +844,19 @@ MonoBehaviour:
       m_Calls: []
   HealthChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+        m_MethodName: set_value
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &8123152349077528546
 MonoBehaviour:
   m_ObjectHideFlags: 0

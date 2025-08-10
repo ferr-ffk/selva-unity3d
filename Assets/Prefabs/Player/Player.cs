@@ -52,25 +52,34 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject _armature;
 
-    [SerializeField, Tooltip("Reference to the target for jumping.")]
+    /// <summary>
+    /// "Reference to the target for jumping.
+    /// </summary>
     private Vector3 _jumpTarget = Vector3.zero;
 
-    [SerializeField, Tooltip("Reference to the target for attacking.")]
+    /// <summary>
+    /// Reference to the target for attacking.
+    /// </summary>
     private GameObject _attackTarget;
 
-    [Tooltip("ID of the jump target, used for debugging.")]
+    /// <summary>
+    /// "ID of the jump target, used for debugging.
+    /// </summary>
     private int _jumpTargetId = 0;
 
-    [Tooltip("ID of the attack target, used for debugging.")]
+    /// <summary>
+    /// "ID of the attack target, used for debugging.
+    /// </summary>
     private int _attackTargetId = 0;
 
     [Header("Player Settings")]
     [SerializeField, Tooltip("Factor for slowing down time. Defaults to 0.25f.")]
     private float _slowDownFactor = 0.25f;
 
-    [Header("Quick Time Event Settings")]
-    private float adjustedFixedDeltaTime;
+    [SerializeField, Tooltip("Multiplier for running speed. Defaults to 2f.")]
+    private float _runningMultiplier = 2f;
 
+    [Header("Quick Time Event Settings")]
     [SerializeField, Tooltip("Reference to the UI handler for the launch button in this component.")]
     private UIController _uiButtons;
 
@@ -80,7 +89,11 @@ public class Player : MonoBehaviour
     [SerializeField, Tooltip("TextMeshPro component for displaying QTE instructions.")]
     private Text _qteText;
 
+    private float adjustedFixedDeltaTime;
+
     private bool _lockMovement = false;
+
+    private bool _running = false;
 
     /// <summary>
     /// Called once before the first execution of Update after the MonoBehaviour is created.
@@ -115,6 +128,22 @@ public class Player : MonoBehaviour
         {
             HandleMovement();
         }
+    }
+
+    public void ToggleRunning(bool running)
+    {
+        if (running)
+        {
+            _movementComponent.SetTargetVelocity(_movementComponent.GetTargetVelocity() * _runningMultiplier);
+            _movementComponent.SetAcceleration(_movementComponent.GetAcceleration() / _runningMultiplier);
+        }
+        else
+        {
+            _movementComponent.SetTargetVelocity(_movementComponent.GetTargetVelocity() / _runningMultiplier);
+            _movementComponent.SetAcceleration(_movementComponent.GetAcceleration() * _runningMultiplier);
+        }
+
+        _running = running;
     }
 
     /// <summary>
