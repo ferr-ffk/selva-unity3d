@@ -256,6 +256,9 @@ public class Player : MonoBehaviour
 
                 _launchComponent.LaunchTo(_jumpTarget);
 
+                // Prevents the player from launching again while in mid-air
+                _uiButtons.HideLaunchButton();
+
                 // Locks the movement to prevent player from moving while in QTE
                 _lockMovement = true;
             }

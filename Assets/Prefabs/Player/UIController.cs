@@ -7,16 +7,16 @@ public class UIController : MonoBehaviour
 {
     [Header("Reference")]
     [SerializeField, Tooltip("Reference to the button used for attacking.")]
-    private GameObject _attackButton;
+    private Canvas _attackButton;
 
     [SerializeField, Tooltip("Reference to the button used for jumping.")]
-    private GameObject _launchButton;
+    private Canvas _launchButton;
 
     public void ShowAttackButton()
     {
         if (_attackButton != null)
         {
-            _attackButton.SetActive(true);
+            _attackButton.enabled = true;
         }
         else
         {
@@ -28,7 +28,7 @@ public class UIController : MonoBehaviour
     {
         if (_attackButton != null)
         {
-            _attackButton.SetActive(false);
+            _attackButton.enabled = false;
         }
         else
         {
@@ -40,7 +40,7 @@ public class UIController : MonoBehaviour
     {
         if (_launchButton != null)
         {
-            _launchButton.SetActive(true);
+            _launchButton.enabled = true;
         }
         else
         {
@@ -52,7 +52,7 @@ public class UIController : MonoBehaviour
     {
         if (_launchButton != null)
         {
-            _launchButton.SetActive(false);
+            _launchButton.enabled = false;
         }
         else
         {
