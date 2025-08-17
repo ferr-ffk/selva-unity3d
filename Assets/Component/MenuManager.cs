@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using UnityEditor.SearchService;
 using UnityEngine;
 
 /// <summary>
@@ -15,6 +16,8 @@ public class MenuManager : MonoBehaviour
     private Canvas[] _canvasList;
 
     private Canvas _currentCanvas;
+
+    private float _previousTimeScale = 1f;
 
     private void Start()
     {
@@ -34,14 +37,18 @@ public class MenuManager : MonoBehaviour
         // Clears all existing canvases
         foreach (var canvas in _canvasList)
         {
-            canvas.gameObject.SetActive(false);
+            canvas.enabled = false;
         }
 
         // Sets the starting canvas as the current canvas
         _currentCanvas = _startingCanvas;
-        _currentCanvas.gameObject.SetActive(true);
+        _currentCanvas.enabled = true;
     }
 
+    /// <summary>
+    /// Switches to a specified canvas.
+    /// </summary>
+    /// <param name="canvas"></param>
     public void SwitchTo(Canvas canvas)
     {
         if (canvas == null)
@@ -56,11 +63,57 @@ public class MenuManager : MonoBehaviour
             return;
         }
 
-        _currentCanvas?.gameObject.SetActive(false);
+        _currentCanvas.enabled = false;
 
         _currentCanvas = canvas;
 
-        canvas.gameObject.SetActive(true);
+        _currentCanvas.enabled = true;
 
+    }
+
+    /// <summary>
+    /// Pauses or resumes the game by setting the time scale.
+    /// </summary>
+    /// <param name="pause">The value for the current paused game state</param>
+    public void PauseGame(bool pause)
+    {
+        if (pause)
+        {
+            _previousTimeScale = Time.timeScale;
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = _previousTimeScale;
+        }
+    }
+
+    /// <summary>
+    /// Loads a scene by its name.
+    /// </summary>
+    /// <param name="scene">The name of the scene</param>
+    public void LoadScene(string scene)
+    {
+        if (scene == null)
+        {
+            Debug.LogError("Cannot load a null scene.");
+            return;
+        }
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene(scene);
+    }
+
+    /// <summary>
+    /// Quits the game and stops playing in the editor if applicable.
+    /// </summary>
+    public void QuitGame()
+    {
+        // Quit the game application
+        Application.Quit();
+
+        // If running in the editor, stop playing
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #endif
     }
 }
