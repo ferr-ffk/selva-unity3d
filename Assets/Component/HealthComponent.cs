@@ -31,6 +31,8 @@ public class HealthComponent : MonoBehaviour
         }
 
         CurrentHealth = _maxHealth;
+
+        HealthChanged.Invoke(GetHealthPorcentage());
     }
 
     /// <summary>
